@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es" class="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vinolillo Admin — Catalogar Nuevo Vino</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+  <link rel="stylesheet" href="../../css/vinolillo.css"/>
+  <link rel="stylesheet" href="../../css/admin.css"/>
+  <style>
+    /* Spinner de número personalizado */
+    .admin-number-input {
+      -moz-appearance: textfield;
+    }
+    .admin-number-input::-webkit-inner-spin-button,
+    .admin-number-input::-webkit-outer-spin-button { -webkit-appearance: none; }
+  </style>
+</head>
+<body>
+
+<!-- ── SIDEBAR ── -->
+<aside class="admin-sidebar">
+  <div class="admin-sidebar-brand">Vinolillo</div>
+  <div class="admin-user-chip">
+    <span class="material-symbols-outlined">account_circle</span>
+    <div>
+      <div class="admin-user-chip-name">Admin</div>
+      <div class="admin-user-chip-role">Panel de Control</div>
+    </div>
+  </div>
+  <nav class="flex-grow-1">
+    <a href="dashboard.html" class="admin-nav-link">
+      <span class="material-symbols-outlined">dashboard</span>Dashboard
+    </a>
+    <a href="vinos.html" class="admin-nav-link active">
+      <span class="material-symbols-outlined">wine_bar</span>Vinos
+    </a>
+    <a href="marcas.html" class="admin-nav-link">
+      <span class="material-symbols-outlined">verified</span>Marcas
+    </a>
+    <a href="categorias.html" class="admin-nav-link">
+      <span class="material-symbols-outlined">category</span>Categorías
+    </a>
+    <a href="marcas.html" class="admin-nav-link">
+      <span class="material-symbols-outlined">storefront</span>Marcas
+    </a>
+    <a href="variedades.html" class="admin-nav-link">
+      <span class="material-symbols-outlined">scatter_plot</span>Variedades
+    </a>
+  </nav>
+  <div class="admin-sidebar-footer" style="position:relative;padding-bottom:0;">
+    <a href="../index.html" class="admin-back-btn" style="position:static;margin:0;width:100%;">
+      VOLVER A LA TIENDA
+    </a>
+  </div>
+</aside>
+
+<!-- ── MAIN ── -->
+<div class="admin-main">
+  <div class="admin-content">
+
+    <!-- Page header -->
+    <div class="admin-page-header">
+      <div>
+        <h1 class="admin-page-title">Catalogar Nuevo Vino</h1>
+        <p class="admin-page-subtitle" style="max-width:440px;">
+          Define la narrativa, especificaciones técnicas y el legado de una nueva adición a la cava digital de nuestra colección exclusiva.
+        </p>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="vinos.html" class="btn-admin-ghost">DESCARTAR</a>
+        <button class="btn-admin-primary">GUARDAR COLECCIÓN</button>
+      </div>
+    </div>
+
+    <!-- Grid principal: formulario izq + imagen der -->
+    <div class="row g-5">
+
+      <!-- Columna izquierda: secciones 01–04 -->
+      <div class="col-12 col-lg-7">
+
+        <!-- 01 Información Básica -->
+        <div class="admin-form-section">
+          <h2 class="admin-section-title">
+            <span class="admin-section-number">01</span>
+            Información Básica
+          </h2>
+          <div class="row g-4">
+            <div class="col-12 col-md-7">
+              <label class="admin-field-label">NOMBRE DEL VINO</label>
+              <input class="admin-input" type="text" placeholder="ej. Château Margaux"/>
+            </div>
+            <div class="col-12 col-md-5">
+              <label class="admin-field-label">COSECHA (VINTAGE)</label>
+              <input class="admin-input" type="number" placeholder="2018" class="admin-number-input"/>
+            </div>
+            <div class="col-12 col-md-6">
+              <label class="admin-field-label">PAÍS DE ORIGEN</label>
+              <select class="admin-select">
+                <option value="">Buscar país...</option>
+                <option>Chile</option>
+                <option>Argentina</option>
+                <option>España</option>
+                <option>Francia</option>
+                <option>Italia</option>
+                <option>Portugal</option>
+                <option>Estados Unidos</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6">
+              <label class="admin-field-label">REGIÓN / TERROIR</label>
+              <input class="admin-input" type="text" placeholder="Bordeaux"/>
+            </div>
+            <div class="col-12 col-md-6">
+              <label class="admin-field-label">CATEGORÍA EDITORIAL</label>
+              <select class="admin-select">
+                <option value="">Seleccionar...</option>
+                <option>Tinto</option>
+                <option>Blanco</option>
+                <option>Rosado</option>
+                <option>Espumante</option>
+                <option>Destilado</option>
+                <option>Licor</option>
+                <option>Cerveza</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6">
+              <label class="admin-field-label">CASA / BODEGA</label>
+              <select class="admin-select">
+                <option value="">Seleccionar...</option>
+                <option>Concha y Toro</option>
+                <option>Torres</option>
+                <option>Ron Zacapa</option>
+                <option>Montes</option>
+                <option>Patron</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 Detalles Técnicos -->
+        <div class="admin-form-section">
+          <h2 class="admin-section-title">
+            <span class="admin-section-number">02</span>
+            Detalles Técnicos
+          </h2>
+          <div class="d-flex gap-3 flex-wrap">
+            <!-- Alcohol -->
+            <div class="admin-tech-card" style="flex:1;min-width:130px;">
+              <span class="admin-tech-label">ALCOHOL POR VOL.</span>
+              <div class="d-flex align-items-baseline gap-1">
+                <input type="number"
+                  style="background:transparent;border:none;outline:none;font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--vino-on-surface);width:70px;"
+                  value="13.5" step="0.1" min="0" max="100"/>
+                <span class="admin-tech-unit">%</span>
+              </div>
+            </div>
+            <!-- Contenido -->
+            <div class="admin-tech-card" style="flex:1;min-width:130px;">
+              <span class="admin-tech-label">CONTENIDO</span>
+              <div class="d-flex align-items-baseline gap-1">
+                <input type="number"
+                  style="background:transparent;border:none;outline:none;font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--vino-on-surface);width:70px;"
+                  value="750" step="50" min="0"/>
+                <span class="admin-tech-unit">ml</span>
+              </div>
+            </div>
+            <!-- Estado -->
+            <div class="admin-tech-card" style="flex:1;min-width:140px;">
+              <span class="admin-tech-label">ESTADO INICIAL</span>
+              <div class="admin-toggle-wrap mt-2">
+                ACTIVO
+                <label class="admin-toggle">
+                  <input type="checkbox" checked/>
+                  <span class="admin-toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 Nota del Sommelier -->
+        <div class="admin-form-section">
+          <h2 class="admin-section-title">
+            <span class="admin-section-number">03</span>
+            Nota del Sommelier
+          </h2>
+          <textarea class="admin-textarea"
+            placeholder="Describe el carácter, bouquet y final de esta cosecha..."></textarea>
+        </div>
+
+        <!-- 04 Valoración y Stock -->
+        <div class="admin-form-section">
+          <h2 class="admin-section-title">
+            <span class="admin-section-number">04</span>
+            Valoración y Stock
+          </h2>
+          <div class="row g-4">
+            <div class="col-12 col-md-5">
+              <label class="admin-field-label">PRECIO UNITARIO</label>
+              <div class="admin-price-wrap">
+                <span class="admin-price-symbol">$</span>
+                <input class="admin-price-input admin-number-input"
+                  type="number" value="0.00" step="0.01" min="0"/>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="admin-field-label">CANTIDAD EN CAVA</label>
+              <div class="d-flex align-items-baseline gap-2">
+                <input class="admin-qty-input admin-number-input"
+                  type="number" value="0" min="0"/>
+                <span style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--vino-muted);">BOTELLAS</span>
+              </div>
+            </div>
+            <div class="col-12 col-md-3">
+              <label class="admin-field-label">DESCUENTO (%)</label>
+              <div class="d-flex align-items-baseline gap-2">
+                <input class="admin-qty-input admin-number-input"
+                  type="number" value="0" min="0" max="100" style="width:56px;"/>
+                <span style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--vino-muted);">%<br>OFF</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /col-lg-7 -->
+
+      <!-- Columna derecha: sección 05 imagen -->
+      <div class="col-12 col-lg-5">
+        <div style="position:sticky;top:40px;">
+          <h2 class="admin-section-title">
+            <span class="admin-section-number">05</span>
+            Identidad Visual
+          </h2>
+
+          <div class="admin-image-panel">
+            <!-- Botella placeholder -->
+            <img class="admin-image-preview"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI7yzI9TIeIuTv7wkx9jek9i4olxg65WC_Oi6rx1IKmSuD3XHDUFJe1A1Le5MceSETVERzfgEuVC29Nz6Pxq8Ouoo-14aVN4fsZ3QUQ4ddt_zS_7BvF0Qwzm4v8r4evdBVY8783chxDy1qu_3RF_2wjmDbXy8oxNBdimh9CPfhlbegwZLjFP6XdaF_Tn_LpVMEfvSvpnFIGQUoVvRByu04j9aFftZPrVsVhrAo4uN0konJVpyiRqEbBXjwo5zMQAr3cLfoR2j-kHnx"
+              alt="Botella placeholder"/>
+            <div>
+              <p class="admin-image-panel-title">
+                <span class="material-symbols-outlined" style="font-size:24px;color:var(--vino-border);display:block;margin-bottom:8px;">upload_file</span>
+                Estética de la Botella
+              </p>
+              <p class="admin-image-panel-desc">
+                Sube una fotografía en alta resolución que capture la esencia de la etiqueta.
+              </p>
+            </div>
+            <button class="btn-admin-file">SELECCIONAR ARCHIVO</button>
+            <input type="file" accept="image/*" style="display:none;"/>
+
+            <div style="width:100%;text-align:left;">
+              <span class="admin-url-label">URL DE LA IMAGEN EDITORIAL</span>
+              <input class="admin-url-input" type="url" value="https://ejemplo.com/imagen.jpg"/>
+            </div>
+          </div>
+        </div>
+      </div><!-- /col-lg-5 -->
+
+    </div><!-- /row -->
+  </div><!-- /admin-content -->
+
+  <!-- Footer -->
+  <footer class="admin-footer">
+    <div class="row g-4" style="max-width:1000px;">
+      <div class="col-12 col-md-4">
+        <span class="vino-footer-brand d-block mb-3">VINOLILLO</span>
+        <p>Especialistas en la curaduría de vinos finos y experiencias sensoriales de alta gama.</p>
+      </div>
+      <div class="col-6 col-md-2">
+        <span class="vino-footer-title">PRODUCTOS</span>
+        <a href="#">Vinos Tintos</a><a href="#">Blancos Premium</a>
+        <a href="#">Espumantes</a><a href="#">Destilados</a>
+      </div>
+      <div class="col-6 col-md-3">
+        <span class="vino-footer-title">TIENDA</span>
+        <a href="#">Ubicación</a><a href="#">Información de la Tienda</a>
+        <a href="#">Política de Envíos</a><a href="#">Contacto</a>
+      </div>
+      <div class="col-6 col-md-2">
+        <span class="vino-footer-title">LEGAL</span>
+        <p class="font-label-caps" style="font-size:10px;">© 2026 Vinolillo. Solo para mayores de 18 años.</p>
+        <div class="d-flex gap-3 mt-2">
+          <a href="#" style="color:var(--vino-secondary);"><span class="material-symbols-outlined">share</span></a>
+          <a href="#" style="color:var(--vino-secondary);"><span class="material-symbols-outlined">public</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /admin-main -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // File input trigger
+  document.querySelector('.btn-admin-file').addEventListener('click', () => {
+    document.querySelector('input[type="file"]').click();
+  });
+
+  // Preview imagen al seleccionar
+  document.querySelector('input[type="file"]').addEventListener('change', function() {
+    if (this.files && this.files[0]) {
+      const url = URL.createObjectURL(this.files[0]);
+      document.querySelector('.admin-image-preview').src = url;
+      document.querySelector('.admin-image-preview').style.opacity = '1';
+      document.querySelector('.admin-url-input').value = url;
+    }
+  });
+</script>
+</body>
+</html>
