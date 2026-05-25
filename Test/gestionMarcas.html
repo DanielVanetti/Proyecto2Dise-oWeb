@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vinolillo Admin - Gestión de Marcas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb2b9",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-primary": "#ffffff",
+                        "secondary": "#5f5e5e",
+                        "outline-variant": "#c4c7c8",
+                        "inverse-primary": "#c6c6c7",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-container": "#b95664",
+                        "inverse-on-surface": "#f1f1f1",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#454747",
+                        "on-surface": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#400010",
+                        "tertiary": "#9c404e",
+                        "secondary-container": "#e5e2e1",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "background": "#f9f9f9",
+                        "on-primary-container": "#747676",
+                        "surface-bright": "#f9f9f9",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-surface-variant": "#444748",
+                        "on-error": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "primary-container": "#ffffff",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary-fixed-dim": "#c9c6c5",
+                        "tertiary-container": "#ffffff",
+                        "surface-tint": "#5d5f5f",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f3f3f3",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-fixed-variant": "#7e2837",
+                        "primary-fixed": "#e2e2e2",
+                        "surface-variant": "#e2e2e2",
+                        "primary": "#5d5f5f",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-container": "#eeeeee",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary-container": "#656464",
+                        "inverse-surface": "#2f3131",
+                        "tertiary-fixed": "#ffdadc",
+                        "outline": "#747878",
+                        "on-primary-fixed": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "price-display": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "price-display": ["20px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #f9f9f9;
+        }
+        .brand-grid-item:hover .action-overlay {
+            opacity: 1;
+        }
+        .admin-sidebar-item.active {
+            background-color: #e5e2e1;
+            color: #1a1c1c;
+            border-right: 2px solid #5d5f5f;
+        }
+    </style>
+</head>
+<body class="flex min-h-screen text-on-background">
+<!-- SideNavBar (Ref https://lh3.googleusercontent.com/aida-public/AB6AXuC1V7KceIyIgdkkH3jZxNQykxo-KqBiap4fRqM8GlJ0ttxNz9KWIeyPqmfhGManTxexjAuBrmVoj-6kmSK2dBa4Yorj0gPH0rsh7cosIKLAtUU1v0DTdfhx7IXzKfoYh1Q7WE89Ip6JR9pfSMGCfwIK70Af46vDlzdCyCdz-2F2QnPqGPB1TR3kqv_cMOWGpSutOeXtfttr3K6KSjFF18yMjXaTkd1iHLtU5m6jTcYUg2DYbvVHAzGzCj7bUuj56PUj-Wdl_QMNfAM) -->
+<aside class="hidden md:flex flex-col h-screen w-64 border-r border-outline-variant bg-surface sticky top-0 py-8 px-6">
+<div class="mb-12">
+<h1 class="font-display-lg text-2xl tracking-tighter text-on-background">La Última Botella</h1>
+</div>
+<div class="mb-8 p-4 bg-secondary-container rounded-lg flex items-center gap-3">
+<div class="w-10 h-10 bg-on-background rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="font-label-caps text-[12px] text-on-background">Admin</p>
+<p class="font-label-caps text-[10px] text-secondary">PANEL DE CONTROL</p>
+</div>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-3 font-label-caps text-label-caps py-4 px-3 text-secondary hover:bg-surface-container-low transition-colors admin-sidebar-item" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 font-label-caps text-label-caps py-4 px-3 text-secondary hover:bg-surface-container-low transition-colors admin-sidebar-item" href="#">
+<span class="material-symbols-outlined" data-icon="wine_bar">wine_bar</span>
+<span>Productos</span>
+</a>
+<a class="flex items-center gap-3 font-label-caps text-label-caps py-4 px-3 text-secondary hover:bg-surface-container-low transition-colors admin-sidebar-item" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span>Categorías</span>
+</a>
+<a class="flex items-center gap-3 font-label-caps text-label-caps py-4 px-3 text-on-background active admin-sidebar-item" href="#">
+<span class="material-symbols-outlined" data-icon="stars">sell</span>
+<span>Marcas</span>
+</a>
+<a class="flex items-center gap-3 font-label-caps text-label-caps py-4 px-3 text-secondary hover:bg-surface-container-low transition-colors admin-sidebar-item" href="#">
+<span class="material-symbols-outlined" data-icon="temp_preferences_custom">water_drop</span>
+<span>Variedades</span>
+</a>
+</nav>
+<div class="pt-8 mt-auto">
+<button class="w-full bg-on-background text-white font-label-caps text-[10px] py-4 rounded hover:bg-tertiary transition-all">
+                VOLVER A LA TIENDA
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col min-w-0 bg-surface">
+<!-- Header (Ref https://lh3.googleusercontent.com/aida-public/AB6AXuC1V7KceIyIgdkkH3jZxNQykxo-KqBiap4fRqM8GlJ0ttxNz9KWIeyPqmfhGManTxexjAuBrmVoj-6kmSK2dBa4Yorj0gPH0rsh7cosIKLAtUU1v0DTdfhx7IXzKfoYh1Q7WE89Ip6JR9pfSMGCfwIK70Af46vDlzdCyCdz-2F2QnPqGPB1TR3kqv_cMOWGpSutOeXtfttr3K6KSjFF18yMjXaTkd1iHLtU5m6jTcYUg2DYbvVHAzGzCj7bUuj56PUj-Wdl_QMNfAM) -->
+<header class="p-margin-desktop max-w-container-max mx-auto w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div>
+<h2 class="font-display-lg text-4xl mb-2 text-on-background">Casas y Bodegas</h2>
+<p class="font-body-md text-secondary">Gestiona los productores y casas vinícolas que dan vida a la colección.</p>
+</div>
+<button class="bg-on-background text-on-primary font-label-caps text-label-caps py-4 px-8 hover:bg-tertiary transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                NUEVA BODEGA
+            </button>
+</header>
+<!-- Search and Filter (Ref https://lh3.googleusercontent.com/aida-public/AB6AXuC1V7KceIyIgdkkH3jZxNQykxo-KqBiap4fRqM8GlJ0ttxNz9KWIeyPqmfhGManTxexjAuBrmVoj-6kmSK2dBa4Yorj0gPH0rsh7cosIKLAtUU1v0DTdfhx7IXzKfoYh1Q7WE89Ip6JR9pfSMGCfwIK70Af46vDlzdCyCdz-2F2QnPqGPB1TR3kqv_cMOWGpSutOeXtfttr3K6KSjFF18yMjXaTkd1iHLtU5m6jTcYUg2DYbvVHAzGzCj7bUuj56PUj-Wdl_QMNfAM) -->
+<div class="px-margin-desktop max-w-container-max mx-auto w-full mb-8">
+<div class="bg-surface-container-low p-6 rounded-lg flex flex-wrap gap-4 items-center">
+<div class="relative flex-grow max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-sm">search</span>
+<input class="w-full bg-white border border-outline-variant rounded py-2.5 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary focus:border-primary" placeholder="Buscar por nombre o descripción..." type="text"/>
+</div>
+<div class="relative w-full md:w-64">
+<input class="w-full bg-white border border-outline-variant rounded py-2.5 px-4 text-sm focus:ring-1 focus:ring-primary focus:border-primary" placeholder="Buscar por país..." type="text"/>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2.5 rounded font-label-caps text-xs hover:bg-outline-variant transition-colors">Filtrar</button>
+</div>
+</div>
+<!-- Brands Grid/Table Section -->
+<div class="px-margin-desktop max-w-container-max mx-auto w-full flex-grow">
+<!-- Table View (Ref https://lh3.googleusercontent.com/aida-public/AB6AXuC1V7KceIyIgdkkH3jZxNQykxo-KqBiap4fRqM8GlJ0ttxNz9KWIeyPqmfhGManTxexjAuBrmVoj-6kmSK2dBa4Yorj0gPH0rsh7cosIKLAtUU1v0DTdfhx7IXzKfoYh1Q7WE89Ip6JR9pfSMGCfwIK70Af46vDlzdCyCdz-2F2QnPqGPB1TR3kqv_cMOWGpSutOeXtfttr3K6KSjFF18yMjXaTkd1iHLtU5m6jTcYUg2DYbvVHAzGzCj7bUuj56PUj-Wdl_QMNfAM but styled with DS) -->
+<div class="bg-surface-container-low rounded-lg overflow-hidden border border-outline-variant">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr class="font-label-caps text-[10px] text-secondary tracking-widest uppercase">
+<th class="py-6 px-8 font-semibold w-1/2">Bodega y Origen <span class="material-symbols-outlined text-xs">unfold_more</span></th>
+<th class="py-6 px-8 font-semibold">Presencia Digital</th>
+<th class="py-6 px-8 font-semibold text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="border-b border-outline-variant/30 hover:bg-white transition-colors group">
+<td class="py-8 px-8">
+<div class="font-headline-sm text-lg text-on-background">Ron Zacapa</div>
+<div class="text-[10px] text-secondary font-label-caps mt-1">N/A • GUATEMALA</div>
+</td>
+<td class="py-8 px-8 text-secondary font-label-caps text-xs">N/A</td>
+<td class="py-8 px-8 text-right">
+<div class="flex justify-end gap-4">
+<button class="text-secondary hover:text-on-background transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-secondary hover:text-error transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-outline-variant/30 hover:bg-white transition-colors group">
+<td class="py-8 px-8">
+<div class="font-headline-sm text-lg text-on-background">Veuve Clicquot</div>
+<div class="text-[10px] text-secondary font-label-caps mt-1">N/A • FRANCIA</div>
+</td>
+<td class="py-8 px-8 text-secondary font-label-caps text-xs">N/A</td>
+<td class="py-8 px-8 text-right">
+<div class="flex justify-end gap-4">
+<button class="text-secondary hover:text-on-background transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-secondary hover:text-error transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="border-b border-outline-variant/30 hover:bg-white transition-colors group">
+<td class="py-8 px-8">
+<div class="font-headline-sm text-lg text-on-background">Trivento</div>
+<div class="text-[10px] text-secondary font-label-caps mt-1">N/A • ARGENTINA</div>
+</td>
+<td class="py-8 px-8 text-secondary font-label-caps text-xs">N/A</td>
+<td class="py-8 px-8 text-right">
+<div class="flex justify-end gap-4">
+<button class="text-secondary hover:text-on-background transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-secondary hover:text-error transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="border-b border-outline-variant/30 hover:bg-white transition-colors group">
+<td class="py-8 px-8">
+<div class="font-headline-sm text-lg text-on-background">Torres</div>
+<div class="text-[10px] text-secondary font-label-caps mt-1">N/A • ESPAÑA</div>
+</td>
+<td class="py-8 px-8 text-secondary font-label-caps text-xs">N/A</td>
+<td class="py-8 px-8 text-right">
+<div class="flex justify-end gap-4">
+<button class="text-secondary hover:text-on-background transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-secondary hover:text-error transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Component -->
+<div class="mt-8 flex flex-col md:flex-row justify-between items-center gap-6 pb-12">
+<p class="font-label-caps text-[10px] text-secondary">MOSTRANDO 1-10 DE 48 BODEGAS</p>
+<div class="flex items-center gap-1">
+<button class="p-2 text-secondary hover:text-on-background disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center font-label-caps text-xs bg-on-background text-white">1</button>
+<button class="w-8 h-8 rounded flex items-center justify-center font-label-caps text-xs hover:bg-surface-container transition-colors">2</button>
+<button class="w-8 h-8 rounded flex items-center justify-center font-label-caps text-xs hover:bg-surface-container transition-colors">3</button>
+<span class="px-2 text-secondary">...</span>
+<button class="w-8 h-8 rounded flex items-center justify-center font-label-caps text-xs hover:bg-surface-container transition-colors">5</button>
+<button class="p-2 text-secondary hover:text-on-background">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Minimalist Footer (Storefront Style) -->
+<footer class="mt-auto bg-white border-t border-outline-variant w-full">
+<div class="max-w-container-max mx-auto px-margin-desktop py-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="md:col-span-1">
+<h4 class="font-display-lg text-xl mb-4">Vinolillo</h4>
+<p class="text-sm text-secondary font-body-md leading-relaxed">Curaduría experta de los mejores vinos y destilados del mundo. Directo desde la bodega a su cava personal.</p>
+</div>
+<div>
+<h5 class="font-label-caps text-xs mb-6 uppercase tracking-widest">Navegación</h5>
+<ul class="space-y-3 font-body-md text-sm text-secondary">
+<li><a class="hover:text-on-background transition-colors" href="#">Catálogo</a></li>
+<li><a class="hover:text-on-background transition-colors" href="#">Suscripciones</a></li>
+<li><a class="hover:text-on-background transition-colors" href="#">Eventos</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-xs mb-6 uppercase tracking-widest">Asistencia</h5>
+<ul class="space-y-3 font-body-md text-sm text-secondary">
+<li><a class="hover:text-on-background transition-colors" href="#">Envíos y Entregas</a></li>
+<li><a class="hover:text-on-background transition-colors" href="#">Preguntas Frecuentes</a></li>
+<li><a class="hover:text-on-background transition-colors" href="#">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-xs mb-6 uppercase tracking-widest">Legal</h5>
+<ul class="space-y-3 font-body-md text-sm text-secondary">
+<li><a class="hover:text-on-background transition-colors" href="#">Términos de Servicio</a></li>
+<li><a class="hover:text-on-background transition-colors" href="#">Privacidad</a></li>
+<li><a class="hover:text-on-background transition-colors" href="#">Cookies</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-caps text-[10px] text-secondary opacity-60">© 2024 VINOLILLO. TODOS LOS DERECHOS RESERVADOS.</p>
+<div class="flex gap-6">
+<a class="text-secondary hover:text-on-background transition-colors" href="#"><span class="material-symbols-outlined text-xl">facebook</span></a>
+<a class="text-secondary hover:text-on-background transition-colors" href="#"><span class="material-symbols-outlined text-xl">photo_camera</span></a>
+</div>
+</div>
+</div>
+</footer>
+</main>
+<!-- FAB (Mobile Only) -->
+<div class="fixed bottom-8 right-8 md:hidden">
+<button class="w-14 h-14 bg-on-background text-white rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<script>
+        // Simple logic for interactive elements
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => el.classList.add('opacity-70'));
+            el.addEventListener('mouseup', () => el.classList.remove('opacity-70'));
+            el.addEventListener('mouseleave', () => el.classList.remove('opacity-70'));
+        });
+    </script>
+</body></html>
