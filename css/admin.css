@@ -686,6 +686,105 @@
   padding-bottom: 4px;
 }
 
+/* ── Dashboard ── */
+.dashboard-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.dashboard-stat-card {
+  border: 1px solid var(--vino-border);
+  background: var(--vino-white);
+  padding: 10px 24px;
+  border-radius: 8px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.dashboard-stat-card:hover {
+  border-color: var(--vino-burgundy-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vino-secondary);
+  margin-bottom: 12px;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--vino-on-surface);
+  margin-bottom: 8px;
+}
+
+.stat-subtitle {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--vino-burgundy-light);
+}
+
+.dashboard-section {
+  margin-bottom: 32px;
+  height: 300px;
+}
+
+.dashboard-section-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--vino-on-surface);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--vino-border);
+}
+
+.dashboard-shortcuts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.dashboard-shortcut-card {
+  border: 1px solid var(--vino-border);
+  background: var(--vino-white);
+  padding: 32px 24px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.dashboard-shortcut-card:hover {
+  border-color: var(--vino-burgundy-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.dashboard-shortcut-card .material-symbols-outlined {
+  font-size: 32px;
+  color: var(--vino-burgundy-light);
+}
+
+.shortcut-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--vino-on-surface);
+  text-align: center;
+}
+
 /* Footer del admin (mismo que tienda) */
 .admin-footer {
   background: var(--vino-white);
