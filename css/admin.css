@@ -163,6 +163,12 @@
 }
 .btn-admin-ghost:hover { color: var(--vino-on-surface); }
 
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 /* ── Toolbar de búsqueda ── */
 .admin-toolbar {
   background: var(--vino-container-low);
@@ -979,6 +985,15 @@
     justify-content: center;
     padding: 12px 16px;
     font-size: 10px;
+  }
+  .btn-admin-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+  .admin-header-actions {
+    flex-direction: column-reverse;
+    width: 100%;
+    align-items: stretch;
   }
 
   /* Toolbar */
