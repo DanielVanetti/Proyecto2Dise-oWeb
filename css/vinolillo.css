@@ -348,7 +348,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--vino-burgundy);
+  background: var(--vino-ultra);
   color: white;
   border: none;
   padding: 12px 28px;
