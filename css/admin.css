@@ -7,7 +7,7 @@
 .admin-sidebar {
   position: fixed;
   top: 0; left: 0;
-  width: 200px;
+  width: 220px;
   height: 100vh;
   background: var(--vino-white);
   border-right: 1px solid var(--vino-border);
@@ -29,10 +29,11 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 0 12px 28px;
+  margin-bottom: 12px;
   padding: 10px 12px;
   background: var(--vino-container-low);
-  border: 1px solid var(--vino-border);
+  /* border: 1px solid var(--vino-border); */
+  border-radius: 8px;
 }
 .admin-user-chip .material-symbols-outlined {
   font-size: 22px;
@@ -92,6 +93,10 @@
   flex: 1;
   padding: 48px 56px;
   max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: stretch;
 }
 
 /* ── Page header ── */
@@ -121,7 +126,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--vino-burgundy);
+  /* background: var(--vino-burgundy); */
+  background: var(--vino-on-surface);
   color: white;
   border: none;
   padding: 12px 24px;
@@ -159,13 +165,14 @@
 
 /* ── Toolbar de búsqueda ── */
 .admin-toolbar {
-  background: var(--vino-white);
-  border: 1px solid var(--vino-border);
+  background: var(--vino-container-low);
+  /* border: 1px solid var(--vino-border); */
   padding: 16px 20px;
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 2px;
+  margin-bottom: 20px;
+  border-radius: 8px;
 }
 .admin-search-wrap {
   display: flex;
@@ -212,8 +219,9 @@
 
 /* ── Tabla admin ── */
 .admin-table-wrap {
-  background: var(--vino-white);
+  background: var(--vino-container-low);
   border: 1px solid var(--vino-border);
+  border-radius: 8px;
 }
 .admin-table {
   width: 100%;
@@ -228,7 +236,7 @@
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--vino-muted);
+  color: var(--vino-secondary);
   padding: 14px 20px;
   text-align: left;
   white-space: nowrap;
@@ -305,7 +313,7 @@
 .admin-stock-low {
   font-size: 14px;
   font-weight: 600;
-  color: #d97706;
+  color: #BA1A1A;
 }
 .admin-stock-label {
   font-size: 10px;
@@ -331,13 +339,14 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 4px 10px;
+  border-radius: 50px;
 }
 .admin-badge-active {
-  background: #d1fae5;
+  background: #BCFFB7;
   color: #065f46;
 }
 .admin-badge-inactive {
-  background: #fee2e2;
+  background: #FF9797;
   color: #991b1b;
 }
 .admin-badge-site {
@@ -394,7 +403,8 @@
   align-items: center;
   justify-content: center;
   background: transparent;
-  border: 1px solid var(--vino-border);
+  /* border: 1px solid var(--vino-border); */
+   border: none;
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
@@ -687,7 +697,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--vino-on-surface);
+  /* background: var(--vino-on-surface); */
+  background: var(--vino-burgundy);
   color: white;
   border: none;
   padding: 12px 20px;

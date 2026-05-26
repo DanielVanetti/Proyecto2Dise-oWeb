@@ -28,24 +28,23 @@
     <a href="vinos.html" class="admin-nav-link active">
       <span class="material-symbols-outlined">wine_bar</span>Vinos
     </a>
-    <a href="marcas.html" class="admin-nav-link">
-      <span class="material-symbols-outlined">verified</span>Marcas
-    </a>
     <a href="categorias.html" class="admin-nav-link">
       <span class="material-symbols-outlined">category</span>Categorías
     </a>
     <a href="marcas.html" class="admin-nav-link">
-      <span class="material-symbols-outlined">storefront</span>Marcas
+      <span class="material-symbols-outlined">verified</span>Marcas
     </a>
     <a href="variedades.html" class="admin-nav-link">
       <span class="material-symbols-outlined">scatter_plot</span>Variedades
     </a>
   </nav>
+
   <div class="admin-sidebar-footer" style="position:relative;padding-bottom:0;">
     <a href="../index.html" class="admin-back-btn" style="position:static;margin:0;width:100%;">
       VOLVER A LA TIENDA
     </a>
   </div>
+
 </aside>
 
 <!-- ── MAIN ── -->
@@ -80,7 +79,7 @@
           <tr>
             <th>PRODUCTO</th>
             <th>CATEGORÍA / MARCA</th>
-            <th>PRODUCTO</th>
+            <th>PRECIO</th>
             <th>STOCK</th>
             <th>ESTADO</th>
             <th>ACCIONES</th>
@@ -166,7 +165,7 @@
             <td><span class="admin-price">$28.00</span></td>
             <td>
               <div class="admin-stock-low">10</div>
-              <div class="admin-stock-label" style="color:#d97706;">Unidades</div>
+              <div class="admin-stock-label" style="color:#BA1A1A;">Unidades</div>
             </td>
             <td><span class="admin-badge admin-badge-active">ACTIVO</span></td>
             <td>
@@ -177,8 +176,8 @@
 
         </tbody>
       </table>
-
-      <!-- Paginación -->
+    </div>
+    <!-- Paginación -->
       <div class="admin-pagination-wrap">
         <span class="admin-pagination-info">MOSTRANDO 1-10 DE 48 PRODUCTOS</span>
         <div class="admin-pagination">
@@ -195,37 +194,40 @@
           </button>
         </div>
       </div>
-    </div>
 
   </div><!-- /admin-content -->
 
   <!-- Footer -->
-  <footer class="admin-footer">
-    <div class="row g-4" style="max-width:1000px;">
-      <div class="col-12 col-md-4">
-        <span class="vino-footer-brand d-block mb-3">VINOLILLO</span>
-        <p>Especialistas en la curaduría de vinos finos y experiencias sensoriales de alta gama.</p>
-      </div>
-      <div class="col-6 col-md-2">
-        <span class="vino-footer-title">PRODUCTOS</span>
-        <a href="#">Vinos Tintos</a><a href="#">Blancos Premium</a>
-        <a href="#">Espumantes</a><a href="#">Destilados</a>
-      </div>
-      <div class="col-6 col-md-3">
-        <span class="vino-footer-title">TIENDA</span>
-        <a href="#">Ubicación</a><a href="#">Información de la Tienda</a>
-        <a href="#">Política de Envíos</a><a href="#">Contacto</a>
-      </div>
-      <div class="col-6 col-md-2">
-        <span class="vino-footer-title">LEGAL</span>
-        <p class="font-label-caps" style="font-size:10px;">© 2026 Vinolillo. Solo para mayores de 18 años.</p>
-        <div class="d-flex gap-3 mt-2">
-          <a href="#" style="color:var(--vino-secondary);"><span class="material-symbols-outlined">share</span></a>
-          <a href="#" style="color:var(--vino-secondary);"><span class="material-symbols-outlined">public</span></a>
-        </div>
+<footer class="vino-footer">
+  <div class="row g-4" style="max-width:1280px;margin:0 auto;">
+    <div class="col-12 col-md-4">
+      <span class="vino-footer-brand d-block mb-3">VINOLILLO</span>
+      <p>Especialistas en la curaduría de vinos finos y experiencias sensoriales de alta gama.</p>
+    </div>
+    <div class="col-6 col-md-2">
+      <span class="vino-footer-title">PRODUCTOS</span>
+      <a href="#">Vinos Tintos</a>
+      <a href="#">Blancos Premium</a>
+      <a href="#">Espumantes</a>
+      <a href="#">Destilados</a>
+    </div>
+    <div class="col-6 col-md-3">
+      <span class="vino-footer-title">TIENDA</span>
+      <a href="#">Ubicación</a>
+      <a href="#">Información de la Tienda</a>
+      <a href="#">Política de Envíos</a>
+      <a href="#">Contacto</a>
+    </div>
+    <div class="col-6 col-md-2">
+      <span class="vino-footer-title">LEGAL</span>
+      <p class="font-label-caps" style="font-size:10px;">© 2026 VINOLILLO. Solo para mayores de 18 años.</p>
+      <div class="d-flex gap-3 mt-3">
+        <a href="#" style="color:var(--vino-secondary);"><span class="material-symbols-outlined">share</span></a>
+        <a href="#" style="color:var(--vino-secondary);"><span class="material-symbols-outlined">public</span></a>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
 </div><!-- /admin-main -->
 
