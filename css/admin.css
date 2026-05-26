@@ -818,3 +818,277 @@
   justify-content: center;
 }
 .admin-back-btn:hover { background: var(--vino-burgundy); color: white; }
+
+/* ─────────────────────────────────────────────
+    RESPONSIVE - Admin
+    ───────────────────────────────────────────── */
+
+/* Tablet: 768px - 1024px */
+@media (max-width: 1023.98px) {
+  .admin-sidebar {
+    width: 180px;
+    padding: 24px 0;
+  }
+  .admin-sidebar-brand { font-size: 16px; padding: 0 16px; }
+  .admin-nav-link {
+    padding: 10px 16px;
+    font-size: 11px;
+    gap: 8px;
+  }
+  .admin-nav-link .material-symbols-outlined { font-size: 16px; }
+
+  .admin-main {
+    margin-left: 180px;
+  }
+  .admin-content {
+    padding: 32px 40px;
+    max-width: 100%;
+  }
+  .admin-page-header {
+    margin-bottom: 32px;
+    gap: 16px;
+  }
+  .admin-page-title { font-size: clamp(24px, 3vw, 32px); }
+
+  .admin-toolbar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .admin-search-wrap {
+    max-width: 100%;
+    flex: 1;
+  }
+
+  .admin-table th {
+    padding: 12px 12px;
+    font-size: 9px;
+  }
+  .admin-table td {
+    padding: 14px 12px;
+    font-size: 12px;
+  }
+  .admin-product-thumb { width: 40px; height: 48px; }
+  .admin-product-name { font-size: 13px; }
+
+  .admin-form-section { margin-bottom: 32px; }
+  .admin-section-title { font-size: 20px; }
+  .admin-content { padding: 32px 24px; }
+
+  .dashboard-stats-row {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+  }
+  .dashboard-stat-card { padding: 16px 20px; }
+  .stat-value { font-size: 28px; }
+
+  .dashboard-shortcuts-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+  }
+}
+
+/* Mobile: < 768px */
+@media (max-width: 767.98px) {
+  /* Sidebar colapsible */
+  .admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: -220px;
+    width: 220px;
+    height: 100vh;
+    background: var(--vino-white);
+    border-right: 1px solid var(--vino-border);
+    z-index: 300;
+    transition: left 0.3s ease;
+    padding: 24px 0;
+  }
+  .admin-sidebar.active { left: 0; }
+
+  .admin-main {
+    margin-left: 0;
+    min-height: 100vh;
+  }
+  .admin-content {
+    padding: 20px 16px;
+    max-width: 100%;
+  }
+
+  /* Page header */
+  .admin-page-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .admin-page-title {
+    font-size: clamp(20px, 5vw, 28px);
+    margin: 0 0 4px;
+  }
+  .admin-page-subtitle { font-size: 12px; }
+  .btn-admin-primary {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 16px;
+    font-size: 10px;
+  }
+
+  /* Toolbar */
+  .admin-toolbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+  .admin-search-wrap {
+    max-width: 100%;
+    border: 1px solid var(--vino-border);
+    padding: 8px 10px;
+  }
+  .admin-search-wrap input { font-size: 12px; }
+
+  /* Tablas - scroll horizontal */
+  .admin-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .admin-table {
+    min-width: 600px;
+  }
+  .admin-table th {
+    padding: 10px 8px;
+    font-size: 8px;
+    white-space: nowrap;
+  }
+  .admin-table td {
+    padding: 10px 8px;
+    font-size: 11px;
+  }
+  .admin-product-cell {
+    gap: 8px;
+    flex-direction: column;
+  }
+  .admin-product-thumb {
+    width: 100%;
+    height: auto;
+  }
+  .admin-product-name { font-size: 12px; }
+  .admin-product-meta { font-size: 10px; }
+
+  .admin-action-btn { padding: 4px; }
+  .admin-action-btn .material-symbols-outlined { font-size: 16px; }
+
+  /* Paginación */
+  .admin-pagination-wrap {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+  .admin-pagination-info { font-size: 9px; }
+  .admin-page-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+  }
+
+  /* Formularios */
+  .admin-form-section { margin-bottom: 32px; }
+  .admin-section-title {
+    font-size: 18px;
+    margin: 0 0 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .admin-section-number { margin-right: 0; }
+
+  .admin-field-label {
+    font-size: 9px;
+    margin-bottom: 6px;
+  }
+  .admin-input {
+    padding: 8px 0;
+    font-size: 13px;
+  }
+  .admin-select {
+    padding: 8px 28px 8px 10px;
+    font-size: 13px;
+  }
+  .admin-textarea {
+    padding: 12px;
+    min-height: 120px;
+    font-size: 12px;
+  }
+
+  /* Tech cards */
+  .admin-tech-card {
+    padding: 12px 16px;
+  }
+  .admin-tech-label { font-size: 8px; margin-bottom: 6px; }
+  .admin-tech-value { font-size: 22px; }
+  .admin-tech-unit { font-size: 11px; }
+
+  /* Price input */
+  .admin-price-input { width: 80px; font-size: 20px; }
+  .admin-qty-input { width: 60px; font-size: 20px; }
+
+  /* Image panel */
+  .admin-image-panel {
+    padding: 20px 16px;
+  }
+  .admin-image-panel .material-symbols-outlined { font-size: 24px; }
+  .admin-image-panel-title { font-size: 16px; }
+  .admin-image-panel-desc {
+    max-width: 100%;
+    font-size: 12px;
+  }
+  .admin-image-preview { width: 60px; }
+
+  /* Dashboard */
+  .dashboard-stats-row {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .dashboard-stat-card {
+    padding: 12px 16px;
+  }
+  .stat-label { font-size: 9px; margin-bottom: 8px; }
+  .stat-value { font-size: 24px; }
+  .stat-subtitle { font-size: 9px; }
+
+  .dashboard-section { height: auto; margin-bottom: 24px; }
+  .dashboard-section-title {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .dashboard-shortcuts-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+  }
+  .dashboard-shortcut-card {
+    padding: 20px 16px;
+    gap: 12px;
+  }
+  .dashboard-shortcut-card .material-symbols-outlined { font-size: 24px; }
+  .shortcut-label { font-size: 12px; }
+
+  /* Footer admin */
+  .admin-footer {
+    padding: 32px 16px;
+    border-top: 1px solid var(--vino-border);
+  }
+  .admin-back-btn {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 12px 16px;
+    font-size: 10px;
+    bottom: auto;
+  }
+
+  /* Toggle wrapper */
+  .admin-toggle-wrap {
+    font-size: 9px;
+    gap: 8px;
+  }
+}
