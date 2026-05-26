@@ -47,6 +47,14 @@
 
 </aside>
 
+<!-- Mobile Sidebar Overlay -->
+<div class="admin-sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- Mobile Menu Toggle -->
+<button class="admin-menu-toggle" id="menuToggle" aria-label="Toggle menu">
+  <span class="material-symbols-outlined">menu</span>
+</button>
+
 <!-- ── MAIN ── -->
 <div class="admin-main">
   <div class="admin-content">
@@ -232,5 +240,34 @@
 </div><!-- /admin-main -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Mobile Sidebar Toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.querySelector('.admin-sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+
+    if (menuToggle && sidebar && overlay) {
+      menuToggle.addEventListener('click', function() {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+      });
+
+      overlay.addEventListener('click', function() {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+      });
+
+      // Close sidebar on link click
+      const sidebarLinks = sidebar.querySelectorAll('a');
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          sidebar.classList.remove('active');
+          overlay.classList.remove('active');
+        });
+      });
+    }
+  });
+</script>
 </body>
 </html>

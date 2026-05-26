@@ -1444,18 +1444,3 @@ body {
   .cart-table th:nth-child(3), .cart-table td:nth-child(3) { display: none; }
   .cart-table th:nth-child(4), .cart-table td:nth-child(4) { display: none; }
 }
-
-/* ─────────────────────────────────────────────
-   20. DARK MODE (preparado / opcional)
-   ───────────────────────────────────────────── */
-html.dark {
-  --vino-white:           #1a1c1c;
-  --vino-surface:         #1f2020;
-  --vino-container-low:   #252728;
-  --vino-container:       #2a2c2d;
-  --vino-on-surface:      #e8e8e8;
-  --vino-secondary:       #9e9e9e;
-  --vino-muted:           #6e7070;
-  --vino-border:          #333636;
-  --vino-border-soft:     rgba(255,255,255,0.07);
-}
