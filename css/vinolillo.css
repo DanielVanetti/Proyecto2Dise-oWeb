@@ -531,7 +531,7 @@ body {
 /* Badges de card */
 .vino-card-badge {
   position: absolute;
-  bottom: 12px; left: 12px;
+  top: 12px; left: 12px;
   font-family: var(--font-body);
   font-size: 9px;
   font-weight: 700;
@@ -1069,7 +1069,7 @@ body {
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
 }
-.delivery-option input[type="radio"] { display: none; }
+.delivery-option input[type="radio"] { background: transparent; border: 1px solid var(--vino-border); width: 16px; height: 16px; border-radius: 50%; accent-color: var(--vino-burgundy-light); cursor: pointer; }
 .delivery-option:hover { border-color: var(--vino-on-surface); }
 .delivery-option.selected {
   border-color: var(--vino-on-surface);
