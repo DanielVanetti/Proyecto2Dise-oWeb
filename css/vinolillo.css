@@ -533,6 +533,14 @@ body {
 .vino-card-badge.offer    { background: var(--vino-on-surface); }
 .vino-card-badge.sold-out { background: var(--vino-burgundy-light); }
 
+/* Enlace para tarjetas de productos */
+.vino-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
 /* ─────────────────────────────────────────────
    9. SECCIÓN — ENCABEZADO
    ───────────────────────────────────────────── */
