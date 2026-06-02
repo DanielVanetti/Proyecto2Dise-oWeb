@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vinolillo — Inicio</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../css/vinolillo.css" />
+  <link rel="stylesheet" href="css/vinolillo.css" />
 </head>
 
 <body>
@@ -22,10 +22,10 @@
         <a href="VinolilloCatalogPage.html">PROMOCIONES</a>
       </nav>
     </div>
-    <div class="vino-nav-icons">
-      <button aria-label="Buscar"><span class="material-symbols-outlined">search</span></button>
-      <button aria-label="Mi cuenta"><span class="material-symbols-outlined">settings</span></button>
-      <a href="CartPage.html" aria-label="Carrito" style="position:relative;">
+    <div class="d-flex align-items-center gap-3 ms-auto">
+      <button class="btn btn-link text-dark p-1" aria-label="Buscar"><span class="material-symbols-outlined">search</span></button>
+      <button class="btn btn-link text-dark p-1" aria-label="Mi cuenta"><span class="material-symbols-outlined">settings</span></button>
+      <a href="CartPage.html" class="text-dark p-1" style="position:relative; text-decoration:none;">
         <span class="material-symbols-outlined">shopping_cart</span>
         <span class="vino-cart-badge">0</span>
       </a>
@@ -34,58 +34,54 @@
 
   <main class="page-content">
 
-    <div
-      style="background:var(--vino-white);border-bottom:1px solid var(--vino-border);padding:0 var(--margin-desk);overflow-x: hidden;">
-      <nav class="vino-breadcrumb">
-        <a href="VinolilloHomePage.html">Inicio</a>
-        <span class="material-symbols-outlined sep">chevron_right</span>
-        <span class="current">Portada</span>
+    <div class="bg-white border-bottom px-4 px-md-5 overflow-hidden">
+      <nav class="d-flex align-items-center py-3 text-uppercase fw-semibold" style="font-size:11px; letter-spacing:0.1em; color:var(--vino-muted); gap:4px;">
+        <a href="VinolilloHomePage.html" class="text-decoration-none" style="color:var(--vino-secondary);">Inicio</a>
+        <span class="material-symbols-outlined" style="font-size:14px; color:var(--vino-border);">chevron_right</span>
+        <span style="color:var(--vino-on-surface);">Portada</span>
       </nav>
     </div>
 
     <section class="vino-hero">
       <img class="vino-hero-img" src="img/img_hero.jpg" alt="Premium Wine" />
       <div class="vino-hero-gradient"></div>
-      <div class="vino-hero-content fade-up">
-        <span class="font-label-caps" style="color:var(--vino-burgundy-light);letter-spacing:.3em;">EDICIÓN
-          LIMITADA</span>
-        <h1 class="font-display-xl text-white mt-3 mb-4">El Arte de la Tierra en una Botella</h1>
-        <p class="font-body-lg mb-5" style="color:rgba(200,200,200,0.85);max-width:440px;">
-          Descubra nuestra curaduría exclusiva de los mejores valles del mundo, seleccionados por expertos para
-          paladares exigentes.
+      <div class="vino-hero-content">
+        <span class="text-uppercase fw-semibold" style="color:var(--vino-burgundy-light); letter-spacing:.3em; font-size:11px;">
+          EDICIÓN LIMITADA
+        </span>
+        <h1 class="display-3 text-white mt-3 mb-4">El Arte de la Tierra en una Botella</h1>
+        <p class="fs-5 mb-5 text-white-50" style="max-width:440px;">
+          Descubra nuestra curaduría exclusiva de los mejores valles del mundo, seleccionados por expertos para paladares exigentes.
         </p>
-        <a href="VinolilloCatalogPage.html" class="btn-vino-burgundy"
-          style="font-size:12px;letter-spacing:.15em;padding:16px 40px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+        <a href="VinolilloCatalogPage.html" class="btn-vino btn-vino-burgundy">
           VER COLECCIÓN
         </a>
       </div>
     </section>
 
-    <section style="padding:96px var(--margin-desk);max-width:1280px;margin:0 auto;">
-      <div class="vino-section-title">
+    <section class="container-fluid" style="padding:96px var(--margin-desk); max-width:1280px; margin:0 auto;">
+      <div class="d-flex justify-content-between align-items-end mb-5 flex-wrap gap-3">
         <div>
-          <span class="vino-section-eyebrow">SELECCIÓN DEL SOMMELIER</span>
-          <h2 class="font-headline-md" style="margin:0;">Productos Destacados</h2>
+          <span class="text-uppercase fw-semibold text-burgundy-light d-block mb-2" style="font-size:11px; letter-spacing:0.2em;">SELECCIÓN DEL SOMMELIER</span>
+          <h2 class="fs-2 mb-0">Productos Destacados</h2>
         </div>
-        <a href="VinolilloCatalogPage.html" class="vino-section-link">VER TODO</a>
+        <a href="VinolilloCatalogPage.html" class="text-uppercase fw-semibold text-decoration-none border-bottom pb-1" style="font-size:11px; letter-spacing:0.13em; color:var(--vino-on-surface); border-color:var(--vino-on-surface) !important;">VER TODO</a>
       </div>
 
       <div class="row g-4">
         <div class="col-12 col-sm-6 col-lg-3">
           <a href="ProducDetailPage.html" class="vino-card-link">
-            <div class="vino-card h-100">
+            <div class="vino-card h-100 d-flex flex-column">
               <div class="vino-card-img">
-                <img src="img/Montes_Alpha_Cabernet_Sauvignon-removebg-preview.avif"
-                  alt="Montes Alpha Cabernet Sauvignon" />
-                <span class="vino-card-badge premium">PREMIUM</span>
+                <img src="img/Montes_Alpha_Cabernet_Sauvignon-removebg-preview.avif" alt="Montes Alpha Cabernet Sauvignon" />
+                <span class="vino-card-badge bg-burgundy">PREMIUM</span>
               </div>
-              <div class="vino-card-body">
-                <span class="font-label-caps text-muted-vino d-block mb-2" style="font-size:10px;">PUENTE ALTO,
-                  CHILE</span>
-                <h3 class="font-headline-xs card-title">Montes Alpha Cabernet Sauvignon</h3>
-                <div class="vino-card-footer">
-                  <span class="font-price">₡125.000</span>
-                  <button class="btn-vino-icon" data-add-cart aria-label="Agregar al carrito" onclick="event.stopPropagation();">
+              <div class="d-flex flex-column flex-grow-1" style="padding: 20px;">
+                <span class="text-uppercase fw-semibold d-block mb-1" style="font-size:10px; color:var(--vino-secondary); letter-spacing:0.13em;">PUENTE ALTO, CHILE</span>
+                <h3 class="text-dark" style="font-size:16px; margin-bottom:0; transition:color 0.2s;">Montes Alpha Cabernet Sauvignon</h3>
+                <div class="d-flex justify-content-between align-items-center mt-auto" style="padding-top:16px;">
+                  <span class="text-dark" style="font-size:18px; font-weight:600; letter-spacing:0.02em;">₡125.000</span>
+                  <button class="btn-vino-icon border-0" data-add-cart aria-label="Agregar al carrito" onclick="event.stopPropagation();">
                     <span class="material-symbols-outlined" style="font-size:20px;">add_shopping_cart</span>
                   </button>
                 </div>
@@ -96,41 +92,16 @@
 
         <div class="col-12 col-sm-6 col-lg-3">
           <a href="ProducDetailPage.html" class="vino-card-link">
-            <div class="vino-card h-100">
+            <div class="vino-card h-100 d-flex flex-column">
               <div class="vino-card-img">
-                <img src="img/Concha_y_Toro_Don_Melchor_Cabernet_Sauvignon-removebg-preview.avif"
-                  alt="Concha y Toro Don Melchor Cabernet Sauvignon" />
+                <img src="img/Concha_y_Toro_Don_Melchor_Cabernet_Sauvignon-removebg-preview.avif" alt="Concha y Toro Don Melchor Cabernet Sauvignon" />
               </div>
-              <div class="vino-card-body">
-                <span class="font-label-caps text-muted-vino d-block mb-2" style="font-size:10px;">PIRQUE, CHILE</span>
-                <h3 class="font-headline-xs card-title">Concha y Toro Don Melchor Cabernet Sauvignon</h3>
-                <div class="vino-card-footer">
-                  <span class="font-price">₡85.000</span>
-                  <button class="btn-vino-icon" data-add-cart aria-label="Agregar al carrito" onclick="event.stopPropagation();">
-                    <span class="material-symbols-outlined" style="font-size:20px;">add_shopping_cart</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-        <div class="col-12 col-sm-6 col-lg-3">
-          <a href="ProducDetailPage.html" class="vino-card-link">
-            <div class="vino-card h-100">
-              <div class="vino-card-img">
-                <img src="img/Catena_Zapata_White_Bones_Chardonnay-removebg-preview.avif"
-                  alt="Catena Zapata White Bones Chardonnay" />
-
-              </div>
-              <div class="vino-card-body">
-                <span class="font-label-caps text-muted-vino d-block mb-2" style="font-size:10px;">ACONCAGUA VALLEY,
-                  CHILE</span>
-                <h3 class="font-headline-xs card-title">Catena Zapata White Bones Chardonnay</h3>
-                <div class="vino-card-footer">
-                  <span class="font-price">₡92.000</span>
-                  <button class="btn-vino-icon" data-add-cart aria-label="Agregar al carrito" onclick="event.stopPropagation();">
+              <div class="d-flex flex-column flex-grow-1" style="padding: 20px;">
+                <span class="text-uppercase fw-semibold d-block mb-1" style="font-size:10px; color:var(--vino-secondary); letter-spacing:0.13em;">PIRQUE, CHILE</span>
+                <h3 class="text-dark" style="font-size:16px; margin-bottom:0; transition:color 0.2s;">Concha y Toro Don Melchor Cabernet Sauvignon</h3>
+                <div class="d-flex justify-content-between align-items-center mt-auto" style="padding-top:16px;">
+                  <span class="text-dark" style="font-size:18px; font-weight:600; letter-spacing:0.02em;">₡85.000</span>
+                  <button class="btn-vino-icon border-0" data-add-cart aria-label="Agregar al carrito" onclick="event.stopPropagation();">
                     <span class="material-symbols-outlined" style="font-size:20px;">add_shopping_cart</span>
                   </button>
                 </div>
@@ -141,18 +112,37 @@
 
         <div class="col-12 col-sm-6 col-lg-3">
           <a href="ProducDetailPage.html" class="vino-card-link">
-            <div class="vino-card h-100">
+            <div class="vino-card h-100 d-flex flex-column">
+              <div class="vino-card-img">
+                <img src="img/Catena_Zapata_White_Bones_Chardonnay-removebg-preview.avif" alt="Catena Zapata White Bones Chardonnay" />
+              </div>
+              <div class="d-flex flex-column flex-grow-1" style="padding: 20px;">
+                <span class="text-uppercase fw-semibold d-block mb-1" style="font-size:10px; color:var(--vino-secondary); letter-spacing:0.13em;">ACONCAGUA VALLEY, CHILE</span>
+                <h3 class="text-dark" style="font-size:16px; margin-bottom:0; transition:color 0.2s;">Catena Zapata White Bones Chardonnay</h3>
+                <div class="d-flex justify-content-between align-items-center mt-auto" style="padding-top:16px;">
+                  <span class="text-dark" style="font-size:18px; font-weight:600; letter-spacing:0.02em;">₡92.000</span>
+                  <button class="btn-vino-icon border-0" data-add-cart aria-label="Agregar al carrito" onclick="event.stopPropagation();">
+                    <span class="material-symbols-outlined" style="font-size:20px;">add_shopping_cart</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="ProducDetailPage.html" class="vino-card-link">
+            <div class="vino-card h-100 d-flex flex-column">
               <div class="vino-card-img">
                 <img src="img/Chateau_Mouton_Rothschild-removebg-preview.avif" alt="Château Mouton Rothschild" />
-                <span class="vino-card-badge ultra">ULTRA-PREMIUM</span>
+                <span class="vino-card-badge" style="background-color: var(--vino-ultra);">ULTRA-PREMIUM</span>
               </div>
-              <div class="vino-card-body">
-                <span class="font-label-caps text-muted-vino d-block mb-2" style="font-size:10px;">ACONCAGUA VALLEY,
-                  CHILE</span>
-                <h3 class="font-headline-xs card-title">Château Mouton Rothschild</h3>
-                <div class="vino-card-footer">
-                  <span class="font-price">₡115.000</span>
-                  <button class="btn-vino-icon" data-add-cart aria-label="Agregar al carrito" onclick="event.stopPropagation();">
+              <div class="d-flex flex-column flex-grow-1" style="padding: 20px;">
+                <span class="text-uppercase fw-semibold d-block mb-1" style="font-size:10px; color:var(--vino-secondary); letter-spacing:0.13em;">ACONCAGUA VALLEY, CHILE</span>
+                <h3 class="text-dark" style="font-size:16px; margin-bottom:0; transition:color 0.2s;">Château Mouton Rothschild</h3>
+                <div class="d-flex justify-content-between align-items-center mt-auto" style="padding-top:16px;">
+                  <span class="text-dark" style="font-size:18px; font-weight:600; letter-spacing:0.02em;">₡115.000</span>
+                  <button class="btn-vino-icon border-0" data-add-cart aria-label="Agregar al carrito" onclick="event.stopPropagation();">
                     <span class="material-symbols-outlined" style="font-size:20px;">add_shopping_cart</span>
                   </button>
                 </div>
@@ -163,18 +153,16 @@
       </div>
     </section>
 
-    <div class="vino-newsletter">
-      <div style="max-width:560px;margin:0 auto;padding:0 24px;">
-        <span class="material-symbols-outlined"
-          style="font-size:40px;color:var(--vino-burgundy-light);display:block;margin-bottom:16px;">mail</span>
-        <h2 class="font-headline-md mb-3">Únase a Nuestro Club</h2>
-        <p class="font-body-md" style="color:var(--vino-muted);">
-          Reciba invitaciones exclusivas a catas privadas, preventas de cosechas limitadas y noticias del mundo de la
-          viticultura.
+    <div class="bg-white border-top border-bottom" style="border-color:var(--vino-border) !important; padding:80px var(--margin-desk); text-align:center;">
+      <div style="max-width:480px; margin:0 auto;">
+        <span class="material-symbols-outlined mb-3" style="font-size:40px; color:#9c404e;">mail</span>
+        <h2 class="mb-3" style="font-family:var(--font-display); font-size:clamp(24px, 3vw, 32px); font-weight:600;">Únase a Nuestro Club</h2>
+        <p class="mb-0" style="color:var(--vino-secondary); font-size:15px; line-height:1.6;">
+          Reciba invitaciones exclusivas a catas privadas, preventas de cosechas limitadas y noticias del mundo de la viticultura.
         </p>
-        <div class="newsletter-form">
-          <input class="newsletter-input" type="email" placeholder="SU CORREO ELECTRÓNICO" />
-          <button class="btn-vino-primary">SUSCRIBIRSE</button>
+        <div class="d-flex flex-column flex-sm-row mt-4 mx-auto gap-0">
+          <input class="flex-grow-1 bg-transparent border-0 border-bottom px-2 py-2 text-uppercase fw-semibold" style="font-size:11px; letter-spacing:0.1em; color:var(--vino-on-surface); outline:none; border-color:var(--vino-on-surface) !important;" type="email" placeholder="SU CORREO ELECTRÓNICO" />
+          <button class="btn-vino btn-vino-primary border-0 mt-3 mt-sm-0">SUSCRIBIRSE</button>
         </div>
       </div>
     </div>
@@ -184,27 +172,27 @@
   <footer class="vino-footer">
     <div class="row g-4" style="max-width:1280px;margin:0 auto;">
       <div class="col-12 col-md-4">
-        <span class="vino-footer-brand d-block mb-3">VINOLILLO</span>
-        <p>Especialistas en la curaduría de vinos finos y experiencias sensoriales de alta gama.</p>
+        <span class="font-display fw-bold d-block mb-3 fs-5">VINOLILLO</span>
+        <p class="text-secondary" style="font-size:13px; line-height:1.7;">Especialistas en la curaduría de vinos finos y experiencias sensoriales de alta gama.</p>
       </div>
       <div class="col-6 col-md-2">
-        <span class="vino-footer-title">PRODUCTOS</span>
-        <a href="#">Vinos Tintos</a>
-        <a href="#">Blancos Premium</a>
-        <a href="#">Espumantes</a>
-        <a href="#">Destilados</a>
+        <span class="text-uppercase fw-bold d-block mb-3" style="font-size:10px; letter-spacing:0.18em;">PRODUCTOS</span>
+        <a href="#" class="d-block mb-2" style="font-size:13px;">Vinos Tintos</a>
+        <a href="#" class="d-block mb-2" style="font-size:13px;">Blancos Premium</a>
+        <a href="#" class="d-block mb-2" style="font-size:13px;">Espumantes</a>
+        <a href="#" class="d-block mb-2" style="font-size:13px;">Destilados</a>
       </div>
       <div class="col-6 col-md-3">
-        <span class="vino-footer-title">TIENDA</span>
-        <a href="#">Ubicación</a>
-        <a href="#">Información de la Tienda</a>
-        <a href="#">Política de Envíos</a>
-        <a href="#">Contacto</a>
+        <span class="text-uppercase fw-bold d-block mb-3" style="font-size:10px; letter-spacing:0.18em;">TIENDA</span>
+        <a href="#" class="d-block mb-2" style="font-size:13px;">Ubicación</a>
+        <a href="#" class="d-block mb-2" style="font-size:13px;">Información de la Tienda</a>
+        <a href="#" class="d-block mb-2" style="font-size:13px;">Política de Envíos</a>
+        <a href="#" class="d-block mb-2" style="font-size:13px;">Contacto</a>
       </div>
       <div class="col-6 col-md-2">
-        <span class="vino-footer-title">LEGAL</span>
-        <p class="font-label-caps" style="font-size:10px;">© 2026 VINOLILLO. Solo para mayores de 18 años.</p>
-        <p class="vino-footer-dev mt-4">Desarrollado por Daniel González &amp; Josué Solórzano</p>
+        <span class="text-uppercase fw-bold d-block mb-3" style="font-size:10px; letter-spacing:0.18em;">LEGAL</span>
+        <p class="text-uppercase fw-semibold text-secondary mb-0" style="font-size:10px; letter-spacing:0.13em;">© 2026 VINOLILLO. Solo para mayores de 18 años.</p>
+        <p class="text-secondary mt-4 mb-0 opacity-75" style="font-size:13px; letter-spacing:0.5px;">Desarrollado por Daniel González &amp; Josué Solórzano</p>
         <div class="d-flex gap-3 mt-3">
           <a href="#" style="color:var(--vino-secondary);"><span class="material-symbols-outlined">share</span></a>
           <a href="#" style="color:var(--vino-secondary);"><span class="material-symbols-outlined">public</span></a>
@@ -214,7 +202,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/vinolillo.js"></script>
+  <script src="js/vinolillo.js"></script>
 </body>
 
 </html>

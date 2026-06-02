@@ -1,170 +1,77 @@
-/* ═══════════════════════════════════════════════════════════════
-   VINOLILLO — Design System CSS
-   Versión: 1.0
-   Fuentes: Playfair Display (display/headlines) + Inter (body/labels)
-   Framework base: Bootstrap 5.3
-   ═══════════════════════════════════════════════════════════════ */
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
 
-/* ─────────────────────────────────────────────
-   1. TOKENS & CSS VARIABLES
-   ───────────────────────────────────────────── */
 :root {
-  /* Paleta principal */
-  --vino-burgundy:        #6B1A2A;
-  --vino-burgundy-light:  #9c404e;
-  --vino-burgundy-dark:   #4a1020;
-  --vino-ultra:           #1a1c1c;  /* para badges ULTRA-PREMIUM */
+  --vino-burgundy: #6B1A2A;
+  --vino-burgundy-light: #9c404e;
+  --vino-burgundy-dark: #4a1020;
+  --vino-ultra: #1a1c1c;
 
-  /* Superficies */
-  --vino-white:           #ffffff;
-  --vino-surface:         #f9f9f9;
-  --vino-container-low:   #f3f3f3;
-  --vino-container:       #eeeeee;
-  --vino-container-high:  #e8e8e8;
-  --vino-dim:             #dadada;
+  --vino-white: #ffffff;
+  --vino-surface: #f9f9f9;
+  --vino-container-low: #f3f3f3;
+  --vino-container: #eeeeee;
+  --vino-container-high: #e8e8e8;
+  --vino-dim: #dadada;
 
-  /* Texto */
-  --vino-on-surface:      #1a1c1c;
-  --vino-secondary:       #5f5e5e;
-  --vino-muted:           #747878;
-  --vino-border:          #c4c7c8;
-  --vino-border-soft:     rgba(26, 28, 28, 0.08);
+  --vino-on-surface: #1a1c1c;
+  --vino-secondary: #5f5e5e;
+  --vino-muted: #747878;
+  --vino-border: #c4c7c8;
+  --vino-border-soft: rgba(26, 28, 28, 0.08);
 
-  /* Tipografía */
-  --font-display:  'Playfair Display', Georgia, serif;
-  --font-body:     'Inter', system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
 
-  /* Layout */
-  --nav-height:    72px;
-  --margin-desk:   64px;
-  --margin-mob:    20px;
+  --nav-height: 96px;
+  --margin-desk: 64px;
+  --margin-mob: 20px;
 
-  /* Animaciones */
-  --ease-out:      cubic-bezier(0.165, 0.84, 0.44, 1);
-  --ease-in-out:   cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* ─────────────────────────────────────────────
-   2. RESET & BASE
-   ───────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: var(--font-body);
   font-size: 16px;
-  line-height: 1.6;
   color: var(--vino-on-surface);
   background: var(--vino-surface);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* Material Symbols */
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-  font-size: 20px;
-  line-height: 1;
-  vertical-align: middle;
-  user-select: none;
-}
-
-/* ─────────────────────────────────────────────
-   3. TIPOGRAFÍA
-   ───────────────────────────────────────────── */
-
-/* Display — Playfair, grandes titulares */
-.font-display-xl {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-display {
   font-family: var(--font-display);
-  font-size: clamp(48px, 7vw, 80px);
   font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-}
-.font-display-lg {
-  font-family: var(--font-display);
-  font-size: clamp(32px, 5vw, 60px);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.015em;
-}
-
-/* Headlines — Playfair, secciones y cards */
-.font-headline-md {
-  font-family: var(--font-display);
-  font-size: clamp(24px, 3vw, 32px);
-  font-weight: 600;
-  line-height: 1.3;
-}
-.font-headline-sm {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.4;
-}
-.font-headline-xs {
-  font-family: var(--font-display);
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 1.4;
-}
-
-/* Body — Inter */
-.font-body-lg {
-  font-family: var(--font-body);
-  font-size: 18px;
-  line-height: 1.65;
-  font-weight: 400;
-}
-.font-body-md {
-  font-family: var(--font-body);
-  font-size: 15px;
-  line-height: 1.6;
-  font-weight: 400;
-}
-.font-body-sm {
-  font-family: var(--font-body);
-  font-size: 13px;
-  line-height: 1.55;
-  font-weight: 400;
-}
-
-/* Labels en caps — Inter */
-.font-label-caps {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  line-height: 1;
-}
-
-/* Precios */
-.font-price {
-  font-family: var(--font-body);
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
   color: var(--vino-on-surface);
 }
-.font-price-lg {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 40px);
-  font-weight: 700;
-  color: var(--vino-burgundy-light);
-  letter-spacing: 0.02em;
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
 }
 
-.text-muted-vino { color: var(--vino-muted); }
+.text-burgundy {
+  color: var(--vino-burgundy);
+}
 
-/* ─────────────────────────────────────────────
-   4. NAVEGACIÓN
-   ───────────────────────────────────────────── */
+.text-burgundy-light {
+  color: var(--vino-burgundy-light);
+}
+
+.bg-burgundy {
+  background-color: var(--vino-burgundy);
+}
+
 .vino-nav {
   position: fixed;
   top: 0;
@@ -181,28 +88,25 @@ body {
   transition: box-shadow 0.3s var(--ease-out);
 }
 
-.vino-nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+.vino-nav.scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+}
 
-/* Logo / Brand */
 .vino-nav .brand {
   font-family: var(--font-display);
   font-size: 22px;
   font-weight: 700;
   color: var(--vino-on-surface);
   text-decoration: none;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
 }
-.vino-nav .brand:hover { color: var(--vino-burgundy-light); }
 
-/* Links de navegación */
 .vino-nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 40px;
 }
+
 .vino-nav-links a {
-  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.13em;
@@ -211,96 +115,44 @@ body {
   text-decoration: none;
   position: relative;
   padding-bottom: 2px;
-  transition: color 0.2s;
 }
+
 .vino-nav-links a::after {
   content: '';
   position: absolute;
-  bottom: -2px; left: 0;
-  width: 0; height: 1px;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
   background: var(--vino-burgundy-light);
-  transition: width 0.3s var(--ease-out);
+  transition: width 0.3s;
 }
-.vino-nav-links a:hover,
-.vino-nav-links a.active { color: var(--vino-burgundy-light); }
+
 .vino-nav-links a:hover::after,
-.vino-nav-links a.active::after { width: 100%; }
-
-/* Íconos de la derecha */
-.vino-nav-icons {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-left: auto;
+.vino-nav-links a.active::after {
+  width: 100%;
 }
-.vino-nav-icons button,
-.vino-nav-icons a {
-  background: none;
-  border: none;
-  padding: 4px;
-  color: var(--vino-on-surface);
-  cursor: pointer;
-  transition: color 0.2s;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-.vino-nav-icons button:hover,
-.vino-nav-icons a:hover { color: var(--vino-burgundy-light); }
 
-/* Badge del carrito */
 .vino-cart-badge {
   position: absolute;
-  top: -6px; right: -8px;
+  top: -6px;
+  right: -8px;
   background: var(--vino-burgundy-light);
   color: white;
-  font-family: var(--font-body);
   font-size: 9px;
   font-weight: 700;
-  width: 16px; height: 16px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  letter-spacing: 0;
 }
 
-/* Offset de contenido bajo el nav fijo */
 .page-content {
   padding-top: var(--nav-height);
 }
 
-/* ─────────────────────────────────────────────
-   5. BREADCRUMB
-   ───────────────────────────────────────────── */
-.vino-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 14px 0;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--vino-muted);
-}
-.vino-breadcrumb a {
-  color: var(--vino-secondary);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.vino-breadcrumb a:hover { color: var(--vino-burgundy-light); }
-.vino-breadcrumb .sep {
-  font-size: 14px;
-  color: var(--vino-border);
-  line-height: 1;
-}
-.vino-breadcrumb .current { color: var(--vino-on-surface); }
-
-/* ─────────────────────────────────────────────
-   6. HERO SECTION
-   ───────────────────────────────────────────── */
 .vino-hero {
   position: relative;
   min-height: 640px;
@@ -309,20 +161,22 @@ body {
   display: flex;
   align-items: center;
 }
+
 .vino-hero-img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: right center;
   opacity: 0.75;
 }
+
 .vino-hero-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(10,10,10,0.9) 35%, transparent 75%);
+  background: linear-gradient(to right, rgba(10, 10, 10, 0.9) 35%, transparent 75%);
 }
+
 .vino-hero-content {
   position: relative;
   z-index: 2;
@@ -330,210 +184,113 @@ body {
   max-width: 540px;
 }
 
-/* Fade-up animation para hero */
-.fade-up {
-  animation: fadeUp 0.9s var(--ease-out) both;
-}
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ─────────────────────────────────────────────
-   7. BOTONES
-   ───────────────────────────────────────────── */
-
-/* Primario — Borgoña sólido */
-.btn-vino-primary {
+.btn-vino {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  background: var(--vino-ultra);
-  color: white;
-  border: none;
-  padding: 12px 28px;
-  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.13em;
   text-transform: uppercase;
+  border: none;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.25s var(--ease-out), transform 0.15s;
+  transition: 0.25s;
+  padding: 12px 28px;
 }
-.btn-vino-primary:hover { background: var(--vino-burgundy-dark); color: white; }
-.btn-vino-primary:active { transform: scale(0.98); }
 
-/* Borgoña claro (variante) */
+.btn-vino-primary {
+  background: var(--vino-ultra);
+  color: white;
+}
+
+.btn-vino-primary:hover {
+  background: var(--vino-burgundy-dark);
+  color: white;
+}
+
 .btn-vino-burgundy {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
   background: var(--vino-burgundy);
   color: white;
-  border: none;
   padding: 14px 36px;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.25s, transform 0.15s;
 }
-.btn-vino-burgundy:hover { background: var(--vino-burgundy-light); color: white; }
-.btn-vino-burgundy:active { transform: scale(0.98); }
 
-/* Outline */
+.btn-vino-burgundy:hover {
+  background: var(--vino-burgundy-light);
+  color: white;
+}
+
 .btn-vino-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
   background: transparent;
   color: var(--vino-on-surface);
   border: 1px solid var(--vino-on-surface);
-  padding: 12px 24px;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.2s, color 0.2s;
 }
+
 .btn-vino-outline:hover {
   background: var(--vino-on-surface);
   color: white;
 }
 
-/* Ícono pequeño (carrito, favorito) */
 .btn-vino-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px; height: 40px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
   background: var(--vino-burgundy);
   color: white;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
-}
-.btn-vino-icon:hover { background: var(--vino-burgundy-dark); }
-.btn-vino-icon:active { transform: scale(0.95); }
-
-/* Deshabilitado */
-.btn-disabled {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--vino-container-high);
-  color: var(--vino-secondary);
-  border: none;
-  padding: 10px 20px;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  cursor: not-allowed;
 }
 
-/* ─────────────────────────────────────────────
-   8. CARDS DE PRODUCTO
-   ───────────────────────────────────────────── */
+.btn-vino-icon:hover {
+  background: var(--vino-burgundy-dark);
+}
+
 .vino-card {
   background: var(--vino-white);
   border: 1px solid var(--vino-border-soft);
-  display: flex;
-  flex-direction: column;
-  transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
-}
-.vino-card:hover {
-  border-color: rgba(26,28,28,0.25);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+  transition: 0.3s;
 }
 
-/* Contenedor de imagen */
+.vino-card:hover {
+  border-color: rgba(26, 28, 28, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.07);
+}
+
 .vino-card-img {
-  position: relative;
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
   background: var(--vino-container-low);
+  padding: 24px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  height: 340px;
+  flex-shrink: 0;
 }
+
 .vino-card-img img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   mix-blend-mode: multiply;
-  transition: transform 0.7s var(--ease-out);
-}
-.vino-card:hover .vino-card-img img { transform: scale(1.05); }
-
-/* Body de la card */
-.vino-card-body {
-  padding: 20px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.vino-card-body .card-title {
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.3;
-  color: var(--vino-on-surface);
-  margin-bottom: 6px;
-  transition: color 0.2s;
-}
-.vino-card:hover .card-title { color: var(--vino-burgundy-light); }
-
-.vino-card-body .card-sub {
-  font-size: 12px;
-  color: var(--vino-secondary);
-  margin-bottom: 0;
+  transition: transform 0.7s;
 }
 
-/* Footer de la card (precio + botón) */
-.vino-card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
-  padding-top: 16px;
-  border-top: 1px solid var(--vino-border-soft);
+.vino-card:hover .vino-card-img img {
+  transform: scale(1.05);
 }
 
-.vino-footer-dev{
-  font-size: 13px;
-  opacity: .9;
-  letter-spacing: .5px;
-}
-
-/* Badges de card */
 .vino-card-badge {
   position: absolute;
-  top: 12px; left: 12px;
-  font-family: var(--font-body);
+  top: 12px;
+  left: 12px;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 4px 8px;
-  z-index: 2;
   color: white;
+  z-index: 2;
 }
-.vino-card-badge.premium  { background: var(--vino-burgundy); }
-.vino-card-badge.ultra    { background: var(--vino-on-surface); }
-.vino-card-badge.offer    { background: var(--vino-on-surface); }
-.vino-card-badge.sold-out { background: var(--vino-burgundy-light); }
 
-/* Enlace para tarjetas de productos */
 .vino-card-link {
   text-decoration: none;
   color: inherit;
@@ -541,337 +298,63 @@ body {
   height: 100%;
 }
 
-/* ─────────────────────────────────────────────
-   9. SECCIÓN — ENCABEZADO
-   ───────────────────────────────────────────── */
-.vino-section-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 40px;
-}
-.vino-section-eyebrow {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--vino-burgundy-light);
-  margin-bottom: 8px;
-}
-.vino-section-link {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  color: var(--vino-on-surface);
-  text-decoration: none;
-  border-bottom: 1px solid var(--vino-on-surface);
-  padding-bottom: 2px;
-  transition: color 0.2s, border-color 0.2s;
-}
-.vino-section-link:hover {
-  color: var(--vino-burgundy-light);
-  border-color: var(--vino-burgundy-light);
-}
-
-/* ─────────────────────────────────────────────
-   10. CATÁLOGO — SIDEBAR Y FILTROS
-   ───────────────────────────────────────────── */
-.vino-sidebar {
-  padding-right: 32px;
-}
-
-.vino-filter-group {
-  padding-bottom: 24px;
-  margin-bottom: 24px;
-  border-bottom: 1px solid var(--vino-border);
-}
-.vino-filter-group:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-}
-
-.vino-filter-title {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--vino-on-surface);
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--vino-border-soft);
-}
-
-.vino-filter-check {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-}
 .vino-filter-check input[type="checkbox"] {
-  width: 14px; height: 14px;
+  width: 14px;
+  height: 14px;
   border: 1px solid var(--vino-border);
-  border-radius: 0;
   accent-color: var(--vino-burgundy-light);
-  cursor: pointer;
-  flex-shrink: 0;
 }
-.vino-filter-check .label-text {
-  font-size: 13px;
-  color: var(--vino-secondary);
-  transition: color 0.2s;
-}
-.vino-filter-check:hover .label-text { color: var(--vino-on-surface); }
 
-/* Range slider */
 .vino-range {
   -webkit-appearance: none;
   appearance: none;
-  width: 100%;
   height: 2px;
   background: var(--vino-dim);
-  border-radius: 0;
-  outline: none;
-  cursor: pointer;
 }
+
 .vino-range::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 14px; height: 14px;
+  width: 14px;
+  height: 14px;
   background: var(--vino-burgundy-light);
   border-radius: 50%;
-  cursor: pointer;
-}
-.vino-range::-moz-range-thumb {
-  width: 14px; height: 14px;
-  background: var(--vino-burgundy-light);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
 }
 
-/* Barra de búsqueda del catálogo */
-.catalog-search-wrap {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-bottom: 1px solid var(--vino-on-surface);
-  padding-bottom: 6px;
-  max-width: 320px;
-}
-.catalog-search-wrap .material-symbols-outlined {
-  color: var(--vino-secondary);
-  font-size: 18px;
-}
-.catalog-search-wrap input {
-  background: none;
-  border: none;
-  outline: none;
-  font-family: var(--font-body);
-  font-size: 14px;
-  color: var(--vino-on-surface);
-  width: 100%;
-}
-.catalog-search-wrap input::placeholder { color: var(--vino-muted); }
-
-/* Select de ordenar */
-.sort-select-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.sort-select {
-  appearance: none;
-  background: transparent;
-  border: none;
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--vino-on-surface);
-  padding-right: 24px;
-  cursor: pointer;
-  outline: none;
-}
-.sort-select-wrap .material-symbols-outlined {
-  position: absolute;
-  right: 0;
-  font-size: 16px;
-  pointer-events: none;
-  color: var(--vino-secondary);
-}
-
-/* ─────────────────────────────────────────────
-   11. PAGINACIÓN
-   ───────────────────────────────────────────── */
-.vino-pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  margin-top: 60px;
-}
-.vino-page-btn {
-  width: 44px; height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: 1px solid var(--vino-border);
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--vino-on-surface);
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
-}
-.vino-page-btn:hover {
-  border-color: var(--vino-on-surface);
-}
-.vino-page-btn.active,
-.vino-page-btn.active:hover {
-  background: var(--vino-on-surface);
-  border-color: var(--vino-on-surface);
-  color: white;
-}
-.vino-page-btn.disabled,
-.vino-page-btn:disabled {
-  opacity: 0.3;
-  pointer-events: none;
-}
-.vino-page-dots {
-  font-size: 14px;
-  color: var(--vino-secondary);
-  padding: 0 4px;
-}
-
-/* ─────────────────────────────────────────────
-   12. DETALLE DE PRODUCTO
-   ───────────────────────────────────────────── */
 .product-detail-img {
-  position: relative;
   background: var(--vino-container-low);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 40px;
   min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .product-detail-img img {
   max-height: 520px;
   width: 100%;
   object-fit: contain;
 }
 
-/* Specs del producto */
-.product-spec-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--vino-border-soft);
-}
-.product-spec-row:first-child { border-top: 1px solid var(--vino-border-soft); }
-.spec-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--vino-muted);
-}
-.spec-val {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--vino-on-surface);
-}
-
-/* Stepper de cantidad */
 .qty-stepper {
   display: inline-flex;
   align-items: center;
   border: 1px solid var(--vino-border);
   height: 44px;
 }
+
 .qty-stepper button {
-  width: 40px; height: 100%;
+  width: 40px;
+  height: 100%;
   background: none;
   border: none;
   font-size: 18px;
-  font-weight: 300;
   color: var(--vino-on-surface);
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.qty-stepper button:hover { background: var(--vino-container-low); }
-.qty-val {
-  min-width: 40px;
-  text-align: center;
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 500;
-  border-left: 1px solid var(--vino-border);
-  border-right: 1px solid var(--vino-border);
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-/* Tabs de producto */
-.tab-nav {
-  display: flex;
-  border-bottom: 1px solid var(--vino-border);
-  gap: 0;
-  margin-bottom: 20px;
-}
-.tab-btn {
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  padding: 10px 0;
-  margin-right: 28px;
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--vino-muted);
-  cursor: pointer;
-  transition: color 0.2s, border-color 0.2s;
-  margin-bottom: -1px;
-}
-.tab-btn.active,
-.tab-btn:hover {
-  color: var(--vino-on-surface);
-  border-bottom-color: var(--vino-burgundy-light);
+.qty-stepper button:hover {
+  background: var(--vino-container-low);
 }
 
-/* ─────────────────────────────────────────────
-   13. CARRITO
-   ───────────────────────────────────────────── */
-.cart-table {
-  border-collapse: collapse;
-}
-.cart-table th {
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--vino-muted);
-  padding: 0 0 16px 0;
-  border-bottom: 1px solid var(--vino-border);
-}
-.cart-table td {
-  padding: 24px 0;
-  border-bottom: 1px solid var(--vino-border-soft);
-  vertical-align: middle;
-}
 .cart-item-img {
   width: 80px;
   height: 96px;
@@ -879,537 +362,91 @@ body {
   background: var(--vino-container-low);
   padding: 8px;
 }
-.cart-item-name {
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--vino-on-surface);
-  margin-bottom: 4px;
-}
-.cart-item-sub {
-  font-size: 12px;
-  color: var(--vino-secondary);
-}
 
-/* Resumen del pedido */
-.order-summary {
-  background: var(--vino-white);
-  border: 1px solid var(--vino-border);
-  padding: 28px;
-}
-.order-summary h3 {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--vino-on-surface);
-  margin-bottom: 24px;
-}
-.summary-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--vino-border-soft);
-  font-size: 13px;
-  color: var(--vino-secondary);
-}
-
-/* Badge de seguridad */
-.secure-badge {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  justify-content: center;
-  margin-top: 16px;
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--vino-muted);
-}
-.secure-badge .material-symbols-outlined { font-size: 14px; }
-
-/* Info box (envío gratis, etc.) */
-.vino-info-box {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 16px;
-  background: var(--vino-container-low);
-  border: 1px solid var(--vino-border-soft);
-}
-.vino-info-box .material-symbols-outlined {
-  font-size: 20px;
-  color: var(--vino-burgundy-light);
-  flex-shrink: 0;
-}
-.vino-info-box p {
-  font-size: 13px;
-  color: var(--vino-secondary);
-  margin: 0;
-}
-.vino-info-box a {
-  color: var(--vino-burgundy-light);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-/* ─────────────────────────────────────────────
-   14. CHECKOUT
-   ───────────────────────────────────────────── */
-
-/* Pasos del checkout */
-.checkout-steps {
-  display: flex;
-  align-items: center;
-  gap: 0;
-}
-.checkout-step {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--vino-muted);
-}
 .checkout-step-num {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px; height: 32px;
+  width: 32px;
+  height: 32px;
   border: 1px solid var(--vino-border);
   font-family: var(--font-display);
   font-size: 13px;
   font-weight: 600;
   color: var(--vino-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.checkout-step.active {
-  color: var(--vino-on-surface);
-}
+
 .checkout-step.active .checkout-step-num {
   background: var(--vino-on-surface);
+  color: white;
   border-color: var(--vino-on-surface);
-  color: white;
-}
-.checkout-step.done .checkout-step-num {
-  background: var(--vino-burgundy-light);
-  border-color: var(--vino-burgundy-light);
-  color: white;
-}
-.checkout-step-line {
-  flex: 1;
-  height: 1px;
-  background: var(--vino-border);
-  margin: 0 16px;
-  min-width: 32px;
 }
 
-/* Inputs del checkout */
-.vino-label {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--vino-muted);
-  margin-bottom: 8px;
-}
 .vino-input-box {
-  display: block;
   width: 100%;
   background: transparent;
   border: none;
   border-bottom: 1px solid var(--vino-border);
   padding: 10px 0;
-  font-family: var(--font-body);
-  font-size: 14px;
-  color: var(--vino-on-surface);
   outline: none;
-  transition: border-color 0.2s;
-}
-.vino-input-box:focus { border-bottom-color: var(--vino-burgundy-light); }
-.vino-input-box::placeholder { color: var(--vino-muted); }
-
-.vino-select {
-  display: block;
-  width: 100%;
-  appearance: none;
-  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23747878' stroke-width='1.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 4px center;
-  border: none;
-  border-bottom: 1px solid var(--vino-border);
-  padding: 10px 28px 10px 0;
-  font-family: var(--font-body);
-  font-size: 14px;
-  color: var(--vino-on-surface);
-  outline: none;
-  cursor: pointer;
-  transition: border-color 0.2s;
-}
-.vino-select:focus { border-bottom-color: var(--vino-burgundy-light); }
-
-/* Opciones de entrega */
-.delivery-option {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 20px;
-  border: 1px solid var(--vino-border);
-  cursor: pointer;
-  transition: border-color 0.2s, background 0.2s;
-}
-.delivery-option input[type="radio"] { background: transparent; border: 1px solid var(--vino-border); width: 16px; height: 16px; border-radius: 50%; accent-color: var(--vino-burgundy-light); cursor: pointer; }
-.delivery-option:hover { border-color: var(--vino-on-surface); }
-.delivery-option.selected {
-  border-color: var(--vino-on-surface);
-  background: var(--vino-container-low);
+  transition: 0.2s;
 }
 
-/* ─────────────────────────────────────────────
-   15. NEWSLETTER
-   ───────────────────────────────────────────── */
-.vino-newsletter {
-  background: var(--vino-white);
-  border-top: 1px solid var(--vino-border);
-  border-bottom: 1px solid var(--vino-border);
-  padding: 80px var(--margin-desk);
-  text-align: center;
+.vino-input-box:focus {
+  border-bottom-color: var(--vino-burgundy-light);
 }
-.newsletter-form {
-  display: flex;
-  gap: 0;
-  max-width: 480px;
-  margin: 28px auto 0;
-}
-.newsletter-input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--vino-on-surface);
-  padding: 12px 8px;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--vino-on-surface);
-  outline: none;
-}
-.newsletter-input::placeholder { color: var(--vino-muted); }
-.newsletter-input:focus { border-bottom-color: var(--vino-burgundy-light); }
 
-/* ─────────────────────────────────────────────
-   16. FOOTER
-   ───────────────────────────────────────────── */
 .vino-footer {
   background: var(--vino-white);
   border-top: 1px solid var(--vino-border);
   padding: 64px var(--margin-desk);
 }
-.vino-footer p {
-  font-size: 13px;
-  color: var(--vino-secondary);
-  line-height: 1.7;
-  margin: 0;
-}
-.vino-footer-brand {
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--vino-on-surface);
-}
-.vino-footer-title {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--vino-on-surface);
-  margin-bottom: 16px;
-}
+
 .vino-footer a {
-  display: block;
-  font-size: 13px;
   color: var(--vino-secondary);
   text-decoration: none;
-  margin-bottom: 10px;
-  transition: color 0.2s, padding-left 0.2s;
+  transition: 0.2s;
 }
+
 .vino-footer a:hover {
   color: var(--vino-burgundy-light);
-  padding-left: 4px;
 }
 
-/* ─────────────────────────────────────────────
-   17. SCROLL Y EFECTOS GLOBALES
-   ───────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
 
-/* Scrollbar personalizado */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--vino-surface); }
+::-webkit-scrollbar-track {
+  background: var(--vino-surface);
+}
+
 ::-webkit-scrollbar-thumb {
   background: var(--vino-dim);
   border-radius: 3px;
 }
-::-webkit-scrollbar-thumb:hover { background: var(--vino-secondary); }
 
-/* Selection */
-::selection {
-  background: rgba(156, 64, 78, 0.15);
-  color: var(--vino-burgundy-dark);
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vino-secondary);
 }
 
-/* ─────────────────────────────────────────────
-   18. RESPONSIVE
-   ───────────────────────────────────────────── */
-
-/* Tablet: 768px - 991px */
-@media (max-width: 991.98px) {
+@media (max-width: 991px) {
   :root {
-    --margin-desk: 40px;
-  }
-
-  /* Navegación */
-  .vino-nav {
-    padding: 0 var(--margin-mob);
-    gap: 20px;
-  }
-  .vino-nav .brand { font-size: 18px; }
-  .vino-nav-links { display: none; }
-  .vino-nav-icons { gap: 12px; }
-
-  /* Hero */
-  .vino-hero { min-height: 500px; }
-  .vino-hero-content { padding: 60px var(--margin-mob); max-width: 100%; }
-  .vino-hero-gradient { background: linear-gradient(to right, rgba(10,10,10,0.95) 50%, transparent 100%); }
-
-  /* Secciones */
-  section { padding: 60px var(--margin-mob) !important; }
-  .vino-newsletter { padding: 60px var(--margin-mob); }
-  .vino-footer { padding: 48px var(--margin-mob); }
-
-  /* Product Detail */
-  .product-detail-img { padding: 30px; min-height: 400px; }
-
-  /* Sidebar */
-  .vino-sidebar { padding-right: 0; }
-
-  /* Checkout */
-  .checkout-steps { gap: 0; }
-  .checkout-step-line { min-width: 16px; margin: 0 8px; }
-  .checkout-step span:not(.checkout-step-num) { display: none; }
-
-  /* Carrito */
-  .cart-table th:nth-child(4), .cart-table td:nth-child(4) { display: none; }
-}
-
-/* Mobile: < 768px */
-@media (max-width: 767.98px) {
-  :root {
-    --nav-height: 64px;
     --margin-desk: 20px;
   }
 
-  /* Tipografía adaptativa */
-  .font-display-xl { font-size: clamp(32px, 8vw, 48px); }
-  .font-display-lg { font-size: clamp(24px, 6vw, 32px); }
-  .font-headline-md { font-size: clamp(18px, 5vw, 24px); }
-  .font-body-lg { font-size: 16px; }
-
-  /* Navegación */
-  .vino-nav {
-    padding: 0 16px;
-    gap: 12px;
-    height: var(--nav-height);
+  .vino-nav-links {
+    display: none;
   }
-  .vino-nav .brand {
-    font-size: 16px;
-    letter-spacing: 0;
-  }
-  .vino-nav-links { display: none; }
-  .vino-nav-icons { gap: 8px; }
-  .vino-nav-icons button, .vino-nav-icons a { padding: 2px; }
-  .material-symbols-outlined { font-size: 16px; }
 
-  /* Page content offset */
-  .page-content { padding-top: var(--nav-height); }
-
-  /* Breadcrumb */
-  .vino-breadcrumb {
-    gap: 2px;
-    font-size: 10px;
-    padding: 10px 0;
-  }
-  .vino-breadcrumb .sep { font-size: 12px; }
-
-  /* Hero */
   .vino-hero {
-    min-height: 350px;
-    display: flex;
-    align-items: center;
+    min-height: 400px;
   }
-  .vino-hero-img { object-position: center; }
-  .vino-hero-gradient {
-    background: linear-gradient(to right, rgba(10,10,10,1) 0%, rgba(10,10,10,0.7) 100%);
-  }
+
   .vino-hero-content {
-    padding: 40px 16px;
-    max-width: 100%;
-    position: relative;
-    z-index: 2;
-  }
-  .vino-hero-content h1 {
-    font-size: clamp(28px, 7vw, 36px);
-    line-height: 1.2;
-    margin-bottom: 16px;
-  }
-  .vino-hero-content p {
-    max-width: 100%;
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
-  .btn-vino-burgundy {
-    padding: 12px 24px;
-    font-size: 10px;
+    padding: 40px var(--margin-desk);
   }
 
-  /* Secciones */
-  section { padding: 40px 16px !important; }
-
-  /* Section title */
-  .vino-section-title {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 24px;
+  .vino-hero-gradient {
+    background: linear-gradient(to right, rgba(10, 10, 10, 0.9) 50%, transparent 100%);
   }
-  .vino-section-link { white-space: nowrap; }
-
-  /* Cards de producto */
-  .vino-card-body { padding: 16px; }
-  .vino-card-footer { gap: 8px; }
-  .font-price { font-size: 16px; }
-
-  /* Product Detail */
-  .product-detail-img {
-    padding: 20px;
-    min-height: 300px;
-    margin-bottom: 20px;
-  }
-  .product-detail-img img { max-height: 350px; }
-  .product-spec-row {
-    padding: 10px 0;
-    font-size: 13px;
-  }
-  .spec-label { font-size: 10px; }
-  .spec-val { font-size: 13px; }
-
-  /* Qty Stepper */
-  .qty-stepper { height: 40px; }
-  .qty-stepper button { width: 36px; }
-
-  /* Tabs */
-  .tab-nav { margin-bottom: 16px; }
-  .tab-btn {
-    font-size: 9px;
-    margin-right: 16px;
-    padding: 8px 0;
-  }
-
-  /* Carrito */
-  .cart-item-img {
-    width: 60px;
-    height: 72px;
-  }
-  .cart-item-name { font-size: 14px; }
-  .cart-table th, .cart-table td {
-    padding: 12px 8px;
-    font-size: 12px;
-  }
-  .cart-table th { padding-bottom: 12px; }
-
-  .order-summary {
-    padding: 20px;
-    margin-top: 20px;
-  }
-  .order-summary h3 { margin-bottom: 16px; font-size: 10px; }
-  .summary-row { padding: 8px 0; font-size: 12px; }
-
-  /* Checkout */
-  .checkout-steps { gap: 0; flex-wrap: wrap; }
-  .checkout-step {
-    font-size: 9px;
-    gap: 4px;
-  }
-  .checkout-step-num {
-    width: 28px;
-    height: 28px;
-    font-size: 11px;
-  }
-  .checkout-step-line {
-    min-width: 8px;
-    margin: 0 4px;
-  }
-  .checkout-step span:not(.checkout-step-num) { display: none; }
-
-  /* Inputs */
-  .vino-label { margin-bottom: 6px; font-size: 9px; }
-  .vino-input-box { padding: 8px 0; font-size: 13px; }
-
-  /* Newsletter */
-  .vino-newsletter { padding: 40px 16px; }
-  .vino-newsletter h2 { font-size: 24px; }
-  .newsletter-form {
-    flex-direction: column;
-    gap: 12px;
-    max-width: 100%;
-  }
-  .newsletter-input {
-    border: 1px solid var(--vino-border);
-    padding: 12px 12px;
-  }
-
-  /* Footer */
-  .vino-footer { padding: 40px 16px; }
-  .vino-footer-brand { font-size: 16px; }
-  .vino-footer-title { font-size: 9px; margin-bottom: 12px; }
-  .vino-footer a { font-size: 12px; margin-bottom: 8px; }
-
-  /* Botones generales */
-  .btn-vino-primary, .btn-vino-burgundy, .btn-vino-outline {
-    width: 100%;
-    justify-content: center;
-    padding: 12px 16px;
-  }
-
-  /* Info box */
-  .vino-info-box { flex-direction: column; }
-  .vino-info-box .material-symbols-outlined { font-size: 18px; }
-  .vino-info-box p { font-size: 12px; }
-
-  /* Delivery options */
-  .delivery-option {
-    padding: 12px 16px;
-    font-size: 13px;
-  }
-
-  /* Carrito badges */
-  .vino-cart-badge {
-    top: -4px;
-    right: -4px;
-    width: 14px;
-    height: 14px;
-    font-size: 8px;
-  }
-
-  /* Tablas cart */
-  .cart-table th:nth-child(3), .cart-table td:nth-child(3) { display: none; }
-  .cart-table th:nth-child(4), .cart-table td:nth-child(4) { display: none; }
 }

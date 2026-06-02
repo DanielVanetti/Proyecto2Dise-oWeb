@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vinolillo — Don Melchor Cabernet Sauvignon</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="../css/vinolillo.css"/>
+  <link rel="stylesheet" href="css/vinolillo.css"/>
 </head>
 <body>
 
@@ -20,10 +20,10 @@
       <a href="VinolilloCatalogPage.html">PROMOCIONES</a>
     </nav>
   </div>
-  <div class="vino-nav-icons">
-    <button><span class="material-symbols-outlined">search</span></button>
-    <button><span class="material-symbols-outlined">settings</span></button>
-    <a href="CartPage.html" style="position:relative;">
+  <div class="d-flex align-items-center gap-3 ms-auto">
+    <button class="btn btn-link text-dark p-1" aria-label="Buscar"><span class="material-symbols-outlined">search</span></button>
+    <button class="btn btn-link text-dark p-1" aria-label="Mi cuenta"><span class="material-symbols-outlined">settings</span></button>
+    <a href="CartPage.html" class="text-dark p-1" style="position:relative; text-decoration:none;">
       <span class="material-symbols-outlined">shopping_cart</span>
       <span class="vino-cart-badge">2</span>
     </a>
@@ -31,81 +31,81 @@
 </header>
 
 <main class="page-content" style="padding-bottom:80px;">
-  <div style="max-width:1280px;margin:0 auto;padding:32px var(--margin-desk) 0;">
+  <div class="container-fluid" style="max-width:1280px; margin:0 auto; padding:32px var(--margin-desk) 0;">
 
-    <nav class="vino-breadcrumb mb-5">
-      <a href="VinolilloHomePage.html">Inicio</a>
-      <span class="material-symbols-outlined sep">chevron_right</span>
-      <a href="VinolilloCatalogPage.html">Vinos</a>
-      <span class="material-symbols-outlined sep">chevron_right</span>
-      <a href="VinolilloCatalogPage.html">Tinto</a>
-      <span class="material-symbols-outlined sep">chevron_right</span>
-      <span class="current">Don Melchor Cabernet Sauvignon</span>
+    <nav class="d-flex align-items-center py-3 text-uppercase fw-semibold mb-5" style="font-size:11px; letter-spacing:0.1em; color:var(--vino-muted); gap:4px;">
+      <a href="index.html" class="text-decoration-none" style="color:var(--vino-secondary);">Inicio</a>
+      <span class="material-symbols-outlined" style="font-size:14px; color:var(--vino-border);">chevron_right</span>
+      <a href="VinolilloCatalogPage.html" class="text-decoration-none" style="color:var(--vino-secondary);">Vinos</a>
+      <span class="material-symbols-outlined" style="font-size:14px; color:var(--vino-border);">chevron_right</span>
+      <a href="VinolilloCatalogPage.html" class="text-decoration-none" style="color:var(--vino-secondary);">Tinto</a>
+      <span class="material-symbols-outlined" style="font-size:14px; color:var(--vino-border);">chevron_right</span>
+      <span style="color:var(--vino-on-surface);">Don Melchor Cabernet Sauvignon</span>
     </nav>
 
     <div class="row g-5 mb-5">
       <div class="col-12 col-md-5">
-        <div class="product-detail-img">
-          <span class="vino-card-badge premium" style="top:16px;left:16px;bottom:auto;">PREMIUM SELECT</span>
-          <img src="../img/Concha_y_Toro_Don_Melchor_Cabernet_Sauvignon-removebg-preview.avif" alt="Don Melchor Cabernet Sauvignon"/>
+        <div class="product-detail-img position-relative">
+          <span class="vino-card-badge bg-burgundy position-absolute" style="top:16px; left:16px;">PREMIUM SELECT</span>
+          <img src="img/Concha_y_Toro_Don_Melchor_Cabernet_Sauvignon-removebg-preview.avif" alt="Don Melchor Cabernet Sauvignon"/>
         </div>
       </div>
 
       <div class="col-12 col-md-7">
-        <a href="#" class="font-label-caps" style="font-size:11px;color:var(--vino-burgundy-light);text-decoration:none;display:block;margin-bottom:10px;">Concha y Toro</a>
-        <h1 class="font-display-lg mb-2" style="font-size:clamp(28px,4vw,42px);">Don Melchor Cabernet Sauvignon</h1>
+        <a href="#" class="text-uppercase fw-semibold text-decoration-none d-block mb-2 text-burgundy-light" style="font-size:11px; letter-spacing:0.13em;">Concha y Toro</a>
+        <h1 class="display-5 mb-3 fw-bold text-dark">Don Melchor Cabernet Sauvignon</h1>
         <div class="d-flex align-items-center gap-3 mb-5">
-          <span class="font-price-lg">₡42.750</span>
-          <span class="font-label-caps text-muted-vino" style="font-size:11px;">750ml</span>
+          <span class="fs-2 fw-bold text-burgundy-light">₡42.750</span>
+          <span class="text-uppercase fw-semibold text-muted" style="font-size:11px; letter-spacing:0.13em;">750ml</span>
         </div>
 
         <div class="mb-5">
-          <div class="product-spec-row">
-            <span class="spec-label">Cosecha</span>
-            <span class="spec-val">2020</span>
+          <div class="d-flex justify-content-between align-items-baseline py-2 border-bottom border-top border-secondary-subtle">
+            <span class="text-uppercase fw-bold text-muted" style="font-size:10px; letter-spacing:0.15em;">Cosecha</span>
+            <span class="fw-medium text-dark" style="font-size:14px;">2020</span>
           </div>
-          <div class="product-spec-row">
-            <span class="spec-label">Origen</span>
-            <span class="spec-val">Valle del Maipo, Chile</span>
+          <div class="d-flex justify-content-between align-items-baseline py-2 border-bottom border-secondary-subtle">
+            <span class="text-uppercase fw-bold text-muted" style="font-size:10px; letter-spacing:0.15em;">Origen</span>
+            <span class="fw-medium text-dark" style="font-size:14px;">Valle del Maipo, Chile</span>
           </div>
-          <div class="product-spec-row">
-            <span class="spec-label">Uva</span>
-            <span class="spec-val">Cabernet Sauvignon</span>
+          <div class="d-flex justify-content-between align-items-baseline py-2 border-bottom border-secondary-subtle">
+            <span class="text-uppercase fw-bold text-muted" style="font-size:10px; letter-spacing:0.15em;">Uva</span>
+            <span class="fw-medium text-dark" style="font-size:14px;">Cabernet Sauvignon</span>
           </div>
-          <div class="product-spec-row">
-            <span class="spec-label">Alcohol</span>
-            <span class="spec-val">14.0%</span>
+          <div class="d-flex justify-content-between align-items-baseline py-2 border-bottom border-secondary-subtle">
+            <span class="text-uppercase fw-bold text-muted" style="font-size:10px; letter-spacing:0.15em;">Alcohol</span>
+            <span class="fw-medium text-dark" style="font-size:14px;">14.0%</span>
           </div>
         </div>
 
         <div class="d-flex align-items-center gap-3 mb-4">
-          <div class="qty-stepper">
-            <button class="qty-minus" aria-label="Disminuir">−</button>
-            <span class="qty-val">1</span>
-            <button class="qty-plus" aria-label="Aumentar">+</button>
+          <div class="qty-stepper d-inline-flex">
+            <button class="px-2" aria-label="Disminuir">−</button>
+            <span class="d-flex align-items-center justify-content-center border-start border-end fw-semibold" style="min-width:40px; font-size:14px;">1</span>
+            <button class="px-2" aria-label="Aumentar">+</button>
           </div>
-          <button class="btn-vino-primary flex-grow-1" style="justify-content:center;" data-add-cart>
-            <span class="material-symbols-outlined" style="font-size:18px;">shopping_basket</span>
+          <button class="btn-vino btn-vino-primary flex-grow-1 py-3" data-add-cart>
+            <span class="material-symbols-outlined fs-5">shopping_basket</span>
             AGREGAR AL CARRITO
           </button>
         </div>
 
         <div data-tabs>
-          <div class="tab-nav">
-            <button class="tab-btn active" data-tab="tab-desc">DESCRIPCIÓN</button>
+          <div class="d-flex border-bottom mb-3" style="gap:28px;">
+            <button class="bg-transparent border-0 border-bottom border-2 text-uppercase fw-bold pb-2" data-tab="tab-desc" style="font-size:10px; letter-spacing:0.15em; color:var(--vino-on-surface); border-color:var(--vino-burgundy-light) !important;">DESCRIPCIÓN</button>
           </div>
-          <div id="tab-desc" class="tab-panel">
-            <p class="font-body-md" style="color:var(--vino-secondary);">
+          <div id="tab-desc" class="py-2">
+            <p class="text-secondary" style="font-size:15px; line-height:1.6;">
               Vino emblemático chileno con notas de moras negras, cedro y tabaco, acompañadas de taninos firmes y una estructura elegante. Un Cabernet Sauvignon de carácter excepcional, criado en el legendario Valle del Maipo con décadas de historia vitivinícola. Su final prolongado y su complejidad lo convierten en una referencia obligada de Chile.
             </p>
           </div>
-          <div id="tab-marid" class="tab-panel" style="display:none;">
-            <p class="font-body-md" style="color:var(--vino-secondary);">
+          <div id="tab-marid" style="display:none;" class="py-2">
+            <p class="text-secondary" style="font-size:15px; line-height:1.6;">
               Ideal para acompañar carnes rojas asadas, cordero, quesos maduros y platos con salsas intensas.
             </p>
           </div>
-          <div id="tab-bodega" class="tab-panel" style="display:none;">
-            <p class="font-body-md" style="color:var(--vino-secondary);">
+          <div id="tab-bodega" style="display:none;" class="py-2">
+            <p class="text-secondary" style="font-size:15px; line-height:1.6;">
               Concha y Toro, fundada en 1883 en el Valle del Maipo, es una de las viñas más reconocidas de Chile y América Latina.
             </p>
           </div>
@@ -113,60 +113,76 @@
       </div>
     </div>
 
-    <section class="mt-5 pt-4" style="border-top:1px solid var(--vino-border);">
-      <h2 class="font-label-caps mb-5" style="font-size:13px;letter-spacing:.15em;">PRODUCTOS RELACIONADOS</h2>
+    <section class="mt-5 pt-5 border-top border-secondary-subtle">
+      <h2 class="text-uppercase fw-semibold mb-5 text-dark" style="font-size:13px; letter-spacing:.15em;">PRODUCTOS RELACIONADOS</h2>
       <div class="row g-4">
 
         <div class="col-6 col-lg-3">
-          <div class="vino-card">
-            <div class="vino-card-img" style="padding:20px;">
-              <img src="../img/Montes_Alpha_Cabernet_Sauvignon-removebg-preview.avif" alt="Montes Alpha"/>
+          <a href="#" class="vino-card-link">
+            <div class="vino-card h-100 d-flex flex-column">
+              <div class="vino-card-img" style="padding:24px;">
+                <img src="img/Montes_Alpha_Cabernet_Sauvignon-removebg-preview.avif" alt="Montes Alpha"/>
+              </div>
+              <div class="d-flex flex-column flex-grow-1" style="padding:20px;">
+                <span class="text-uppercase fw-semibold d-block mb-1" style="font-size:10px; color:var(--vino-secondary); letter-spacing:0.13em;">MONTES</span>
+                <h4 class="text-dark" style="font-size:16px; margin-bottom:0; transition:color 0.2s;">Montes Alpha Cabernet Sauvignon</h4>
+                <div class="mt-auto" style="padding-top:16px;">
+                  <span class="text-dark" style="font-size:18px; font-weight:600; letter-spacing:0.02em;">₡14.243</span>
+                </div>
+              </div>
             </div>
-            <div class="vino-card-body" style="padding:16px;">
-              <span class="font-label-caps text-muted-vino d-block" style="font-size:9px;margin-bottom:4px;">MONTES</span>
-              <h4 class="card-title" style="font-size:14px;margin-bottom:8px;">Montes Alpha Cabernet Sauvignon</h4>
-              <span class="font-price" style="font-size:15px;">₡14.243</span>
-            </div>
-          </div>
+          </a>
         </div>
 
         <div class="col-6 col-lg-3">
-          <div class="vino-card">
-            <div class="vino-card-img" style="padding:20px;">
-              <img src="../img/Achaval_Ferrer_Quimera-removebg-preview.avif" alt="Achaval Ferrer Quimera"/>
+          <a href="#" class="vino-card-link">
+            <div class="vino-card h-100 d-flex flex-column">
+              <div class="vino-card-img" style="padding:24px;">
+                <img src="img/Achaval_Ferrer_Quimera-removebg-preview.avif" alt="Achaval Ferrer Quimera"/>
+              </div>
+              <div class="d-flex flex-column flex-grow-1" style="padding:20px;">
+                <span class="text-uppercase fw-semibold d-block mb-1" style="font-size:10px; color:var(--vino-secondary); letter-spacing:0.13em;">ACHAVAL FERRER</span>
+                <h4 class="text-dark" style="font-size:16px; margin-bottom:0; transition:color 0.2s;">Achaval Ferrer Quimera</h4>
+                <div class="mt-auto" style="padding-top:16px;">
+                  <span class="text-dark" style="font-size:18px; font-weight:600; letter-spacing:0.02em;">₡21.945</span>
+                </div>
+              </div>
             </div>
-            <div class="vino-card-body" style="padding:16px;">
-              <span class="font-label-caps text-muted-vino d-block" style="font-size:9px;margin-bottom:4px;">ACHAVAL FERRER</span>
-              <h4 class="card-title" style="font-size:14px;margin-bottom:8px;">Achaval Ferrer Quimera</h4>
-              <span class="font-price" style="font-size:15px;">₡21.945</span>
-            </div>
-          </div>
+          </a>
         </div>
 
         <div class="col-6 col-lg-3">
-          <div class="vino-card">
-            <div class="vino-card-img" style="padding:20px;">
-              <img src="../img/Torres_Mas_La_Plana_Cabernet_Sauvignon-removebg-preview.avif" alt="Torres Mas La Plana"/>
+          <a href="#" class="vino-card-link">
+            <div class="vino-card h-100 d-flex flex-column">
+              <div class="vino-card-img" style="padding:24px;">
+                <img src="img/Torres_Mas_La_Plana_Cabernet_Sauvignon-removebg-preview.avif" alt="Torres Mas La Plana"/>
+              </div>
+              <div class="d-flex flex-column flex-grow-1" style="padding:20px;">
+                <span class="text-uppercase fw-semibold d-block mb-1" style="font-size:10px; color:var(--vino-secondary); letter-spacing:0.13em;">TORRES</span>
+                <h4 class="text-dark" style="font-size:16px; margin-bottom:0; transition:color 0.2s;">Torres Mas La Plana Cabernet Sauvignon</h4>
+                <div class="mt-auto" style="padding-top:16px;">
+                  <span class="text-dark" style="font-size:18px; font-weight:600; letter-spacing:0.02em;">₡25.650</span>
+                </div>
+              </div>
             </div>
-            <div class="vino-card-body" style="padding:16px;">
-              <span class="font-label-caps text-muted-vino d-block" style="font-size:9px;margin-bottom:4px;">TORRES</span>
-              <h4 class="card-title" style="font-size:14px;margin-bottom:8px;">Torres Mas La Plana Cabernet Sauvignon</h4>
-              <span class="font-price" style="font-size:15px;">₡25.650</span>
-            </div>
-          </div>
+          </a>
         </div>
 
         <div class="col-6 col-lg-3">
-          <div class="vino-card">
-            <div class="vino-card-img" style="padding:20px;">
-              <img src="../img/Zuccardi_Valle_de_Uco_Malbec-removebg-preview.avif" alt="Zuccardi Valle de Uco"/>
+          <a href="#" class="vino-card-link">
+            <div class="vino-card h-100 d-flex flex-column">
+              <div class="vino-card-img" style="padding:24px;">
+                <img src="img/Zuccardi_Valle_de_Uco_Malbec-removebg-preview.avif" alt="Zuccardi Valle de Uco"/>
+              </div>
+              <div class="d-flex flex-column flex-grow-1" style="padding:20px;">
+                <span class="text-uppercase fw-semibold d-block mb-1" style="font-size:10px; color:var(--vino-secondary); letter-spacing:0.13em;">ZUCCARDI</span>
+                <h4 class="text-dark" style="font-size:16px; margin-bottom:0; transition:color 0.2s;">Zuccardi Valle de Uco Malbec</h4>
+                <div class="mt-auto" style="padding-top:16px;">
+                  <span class="text-dark" style="font-size:18px; font-weight:600; letter-spacing:0.02em;">₡18.804</span>
+                </div>
+              </div>
             </div>
-            <div class="vino-card-body" style="padding:16px;">
-              <span class="font-label-caps text-muted-vino d-block" style="font-size:9px;margin-bottom:4px;">ZUCCARDI</span>
-              <h4 class="card-title" style="font-size:14px;margin-bottom:8px;">Zuccardi Valle de Uco Malbec</h4>
-              <span class="font-price" style="font-size:15px;">₡18.804</span>
-            </div>
-          </div>
+          </a>
         </div>
 
       </div>
@@ -178,27 +194,27 @@
 <footer class="vino-footer">
   <div class="row g-4" style="max-width:1280px;margin:0 auto;">
     <div class="col-12 col-md-4">
-      <span class="vino-footer-brand d-block mb-3">VINOLILLO</span>
-      <p>Especialistas en la curaduría de vinos finos y experiencias sensoriales de alta gama.</p>
+      <span class="font-display fw-bold d-block mb-3 fs-5">VINOLILLO</span>
+      <p class="text-secondary" style="font-size:13px; line-height:1.7;">Especialistas en la curaduría de vinos finos y experiencias sensoriales de alta gama.</p>
     </div>
     <div class="col-6 col-md-2">
-      <span class="vino-footer-title">PRODUCTOS</span>
-      <a href="#">Vinos Tintos</a>
-      <a href="#">Blancos Premium</a>
-      <a href="#">Espumantes</a>
-      <a href="#">Destilados</a>
+      <span class="text-uppercase fw-bold d-block mb-3" style="font-size:10px; letter-spacing:0.18em;">PRODUCTOS</span>
+      <a href="#" class="d-block mb-2" style="font-size:13px;">Vinos Tintos</a>
+      <a href="#" class="d-block mb-2" style="font-size:13px;">Blancos Premium</a>
+      <a href="#" class="d-block mb-2" style="font-size:13px;">Espumantes</a>
+      <a href="#" class="d-block mb-2" style="font-size:13px;">Destilados</a>
     </div>
     <div class="col-6 col-md-3">
-      <span class="vino-footer-title">TIENDA</span>
-      <a href="#">Ubicación</a>
-      <a href="#">Información de la Tienda</a>
-      <a href="#">Política de Envíos</a>
-      <a href="#">Contacto</a>
+      <span class="text-uppercase fw-bold d-block mb-3" style="font-size:10px; letter-spacing:0.18em;">TIENDA</span>
+      <a href="#" class="d-block mb-2" style="font-size:13px;">Ubicación</a>
+      <a href="#" class="d-block mb-2" style="font-size:13px;">Información de la Tienda</a>
+      <a href="#" class="d-block mb-2" style="font-size:13px;">Política de Envíos</a>
+      <a href="#" class="d-block mb-2" style="font-size:13px;">Contacto</a>
     </div>
     <div class="col-6 col-md-2">
-      <span class="vino-footer-title">LEGAL</span>
-      <p class="font-label-caps" style="font-size:10px;">© 2026 VINOLILLO. Solo para mayores de 18 años.</p>
-      <p class="vino-footer-dev mt-4">Desarrollado por Daniel González &amp; Josué Solórzano</p>
+      <span class="text-uppercase fw-bold d-block mb-3" style="font-size:10px; letter-spacing:0.18em;">LEGAL</span>
+      <p class="text-uppercase fw-semibold text-secondary mb-0" style="font-size:10px; letter-spacing:0.13em;">© 2026 VINOLILLO. Solo para mayores de 18 años.</p>
+      <p class="text-secondary mt-4 mb-0 opacity-75" style="font-size:13px; letter-spacing:0.5px;">Desarrollado por Daniel González &amp; Josué Solórzano</p>
       <div class="d-flex gap-3 mt-3">
         <a href="#" style="color:var(--vino-secondary);"><span class="material-symbols-outlined">share</span></a>
         <a href="#" style="color:var(--vino-secondary);"><span class="material-symbols-outlined">public</span></a>
@@ -208,6 +224,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../js/vinolillo.js"></script>
+<script src="js/vinolillo.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vinolillo — Catálogo de Vinos</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../css/vinolillo.css" />
+  <link rel="stylesheet" href="css/vinolillo.css" />
 </head>
 
 <body>
@@ -22,97 +22,88 @@
         <a href="VinolilloCatalogPage.html">PROMOCIONES</a>
       </nav>
     </div>
-    <div class="vino-nav-icons">
-      <button><span class="material-symbols-outlined">search</span></button>
-      <button><span class="material-symbols-outlined">settings</span></button>
-      <a href="CartPage.html" style="position:relative;">
+    <div class="d-flex align-items-center gap-3 ms-auto">
+      <button class="btn btn-link text-dark p-1" aria-label="Buscar"><span class="material-symbols-outlined">search</span></button>
+      <button class="btn btn-link text-dark p-1" aria-label="Mi cuenta"><span class="material-symbols-outlined">settings</span></button>
+      <a href="CartPage.html" class="text-dark p-1" style="position:relative; text-decoration:none;">
         <span class="material-symbols-outlined">shopping_cart</span>
         <span class="vino-cart-badge">2</span>
       </a>
     </div>
   </header>
 
-  <main class="page-content" style="padding-top:calc(var(--nav-height) + 32px);padding-bottom:80px;">
-    <div style="max-width:1280px;margin:0 auto;padding:0 var(--margin-desk);">
+  <main class="page-content" style="padding-top:calc(var(--nav-height) + 32px); padding-bottom:80px;">
+    <div class="container-fluid" style="max-width:1280px; margin:0 auto; padding:0 var(--margin-desk);">
 
-      <nav class="vino-breadcrumb mb-4">
-        <a href="VinolilloHomePage.html">Inicio</a>
-        <span class="material-symbols-outlined sep">chevron_right</span>
-        <a href="VinolilloCatalogPage.html">Vinos</a>
-        <span class="material-symbols-outlined sep">chevron_right</span>
-        <span class="current">Tinto</span>
+      <nav class="d-flex align-items-center py-3 text-uppercase fw-semibold mb-4" style="font-size:11px; letter-spacing:0.1em; color:var(--vino-muted); gap:4px;">
+        <a href="index.html" class="text-decoration-none" style="color:var(--vino-secondary);">Inicio</a>
+        <span class="material-symbols-outlined" style="font-size:14px; color:var(--vino-border);">chevron_right</span>
+        <a href="VinolilloCatalogPage.html" class="text-decoration-none" style="color:var(--vino-secondary);">Vinos</a>
+        <span class="material-symbols-outlined" style="font-size:14px; color:var(--vino-border);">chevron_right</span>
+        <span style="color:var(--vino-on-surface);">Tinto</span>
       </nav>
 
       <div class="row g-4">
 
         <div class="col-12 col-lg-3">
-          <div class="vino-sidebar" style="position:sticky;top:calc(var(--nav-height) + 24px);">
+          <div class="pe-lg-4" style="position:sticky; top:calc(var(--nav-height) + 24px);">
 
-            <div class="vino-filter-group">
-              <span class="vino-filter-title">PRECIO</span>
-              <input type="range" class="vino-range" min="5000" max="150000" step="500" value="150000" />
-              <div class="d-flex justify-content-between mt-3 font-label-caps"
-                style="font-size:11px;color:var(--vino-muted);">
+            <div class="mb-4 pb-4 border-bottom border-secondary-subtle">
+              <span class="d-block text-uppercase fw-bold text-dark mb-3 pb-2 border-bottom border-secondary-subtle" style="font-size:10px; letter-spacing:0.18em;">PRECIO</span>
+              <input type="range" class="vino-range w-100" min="5000" max="150000" step="500" value="150000" />
+              <div class="d-flex justify-content-between mt-3 text-uppercase fw-semibold text-muted" style="font-size:11px; letter-spacing:0.13em;">
                 <span>₡5.000</span>
                 <span>₡150.000</span>
               </div>
             </div>
 
-            <div class="vino-filter-group">
-              <span class="vino-filter-title">CATEGORÍA</span>
-              <label class="vino-filter-check mb-2">
+            <div class="mb-4 pb-4 border-bottom border-secondary-subtle">
+              <span class="d-block text-uppercase fw-bold text-dark mb-3 pb-2 border-bottom border-secondary-subtle" style="font-size:10px; letter-spacing:0.18em;">CATEGORÍA</span>
+              <label class="vino-filter-check mb-2 d-flex align-items-center gap-2" style="cursor:pointer;">
                 <input type="checkbox" checked />
-                <span class="label-text">Vinos Tintos</span>
+                <span class="text-secondary" style="font-size:13px;">Vinos Tintos</span>
               </label>
-              <label class="vino-filter-check mb-2">
+              <label class="vino-filter-check mb-2 d-flex align-items-center gap-2" style="cursor:pointer;">
                 <input type="checkbox" />
-                <span class="label-text">Vinos Blancos</span>
+                <span class="text-secondary" style="font-size:13px;">Vinos Blancos</span>
               </label>
-              <label class="vino-filter-check mb-2">
+              <label class="vino-filter-check mb-2 d-flex align-items-center gap-2" style="cursor:pointer;">
                 <input type="checkbox" />
-                <span class="label-text">Espumantes</span>
+                <span class="text-secondary" style="font-size:13px;">Espumantes</span>
               </label>
-              <label class="vino-filter-check">
+              <label class="vino-filter-check d-flex align-items-center gap-2" style="cursor:pointer;">
                 <input type="checkbox" />
-                <span class="label-text">Rosados</span>
+                <span class="text-secondary" style="font-size:13px;">Rosados</span>
               </label>
             </div>
 
-            <div class="vino-filter-group">
-              <span class="vino-filter-title">PAÍS DE ORIGEN</span>
-              <label class="vino-filter-check mb-2"><input type="checkbox" /><span
-                  class="label-text">Chile</span></label>
-              <label class="vino-filter-check mb-2"><input type="checkbox" /><span
-                  class="label-text">Argentina</span></label>
-              <label class="vino-filter-check mb-2"><input type="checkbox" checked /><span
-                  class="label-text">España</span></label>
-              <label class="vino-filter-check"><input type="checkbox" /><span class="label-text">Francia</span></label>
+            <div class="mb-4 pb-4 border-bottom border-secondary-subtle">
+              <span class="d-block text-uppercase fw-bold text-dark mb-3 pb-2 border-bottom border-secondary-subtle" style="font-size:10px; letter-spacing:0.18em;">PAÍS DE ORIGEN</span>
+              <label class="vino-filter-check mb-2 d-flex align-items-center gap-2" style="cursor:pointer;"><input type="checkbox" /><span class="text-secondary" style="font-size:13px;">Chile</span></label>
+              <label class="vino-filter-check mb-2 d-flex align-items-center gap-2" style="cursor:pointer;"><input type="checkbox" /><span class="text-secondary" style="font-size:13px;">Argentina</span></label>
+              <label class="vino-filter-check mb-2 d-flex align-items-center gap-2" style="cursor:pointer;"><input type="checkbox" checked /><span class="text-secondary" style="font-size:13px;">España</span></label>
+              <label class="vino-filter-check d-flex align-items-center gap-2" style="cursor:pointer;"><input type="checkbox" /><span class="text-secondary" style="font-size:13px;">Francia</span></label>
             </div>
 
-            <div class="vino-filter-group">
-              <span class="vino-filter-title">VARIEDAD</span>
-              <label class="vino-filter-check mb-2"><input type="checkbox" /><span class="label-text">Cabernet
-                  Sauvignon</span></label>
-              <label class="vino-filter-check mb-2"><input type="checkbox" /><span
-                  class="label-text">Merlot</span></label>
-              <label class="vino-filter-check"><input type="checkbox" /><span class="label-text">Malbec</span></label>
+            <div class="mb-4 pb-4 border-bottom border-secondary-subtle">
+              <span class="d-block text-uppercase fw-bold text-dark mb-3 pb-2 border-bottom border-secondary-subtle" style="font-size:10px; letter-spacing:0.18em;">VARIEDAD</span>
+              <label class="vino-filter-check mb-2 d-flex align-items-center gap-2" style="cursor:pointer;"><input type="checkbox" /><span class="text-secondary" style="font-size:13px;">Cabernet Sauvignon</span></label>
+              <label class="vino-filter-check mb-2 d-flex align-items-center gap-2" style="cursor:pointer;"><input type="checkbox" /><span class="text-secondary" style="font-size:13px;">Merlot</span></label>
+              <label class="vino-filter-check d-flex align-items-center gap-2" style="cursor:pointer;"><input type="checkbox" /><span class="text-secondary" style="font-size:13px;">Malbec</span></label>
             </div>
 
-            <div class="vino-filter-group">
-              <span class="vino-filter-title">MARCA</span>
-              <label class="vino-filter-check mb-2"><input type="checkbox" /><span class="label-text">Marqués de
-                  Riscal</span></label>
-              <label class="vino-filter-check mb-2"><input type="checkbox" /><span class="label-text">Concha y
-                  Toro</span></label>
-              <label class="vino-filter-check"><input type="checkbox" /><span class="label-text">Catena
-                  Zapata</span></label>
+            <div class="mb-4 pb-4 border-bottom border-secondary-subtle">
+              <span class="d-block text-uppercase fw-bold text-dark mb-3 pb-2 border-bottom border-secondary-subtle" style="font-size:10px; letter-spacing:0.18em;">MARCA</span>
+              <label class="vino-filter-check mb-2 d-flex align-items-center gap-2" style="cursor:pointer;"><input type="checkbox" /><span class="text-secondary" style="font-size:13px;">Marqués de Riscal</span></label>
+              <label class="vino-filter-check mb-2 d-flex align-items-center gap-2" style="cursor:pointer;"><input type="checkbox" /><span class="text-secondary" style="font-size:13px;">Concha y Toro</span></label>
+              <label class="vino-filter-check d-flex align-items-center gap-2" style="cursor:pointer;"><input type="checkbox" /><span class="text-secondary" style="font-size:13px;">Catena Zapata</span></label>
             </div>
 
-            <div class="vino-filter-group">
-              <span class="vino-filter-title">OFERTAS</span>
-              <label class="vino-filter-check">
+            <div class="mb-4">
+              <span class="d-block text-uppercase fw-bold text-dark mb-3 pb-2 border-bottom border-secondary-subtle" style="font-size:10px; letter-spacing:0.18em;">OFERTAS</span>
+              <label class="vino-filter-check d-flex align-items-center gap-2" style="cursor:pointer;">
                 <input type="checkbox" checked />
-                <span class="label-text">Solo en oferta</span>
+                <span class="text-secondary" style="font-size:13px;">Solo en oferta</span>
               </label>
             </div>
 
@@ -121,25 +112,22 @@
 
         <div class="col-12 col-lg-9">
 
-          <div class="d-flex justify-content-between align-items-end pb-4 mb-5"
-            style="border-bottom:1px solid var(--vino-border);">
+          <div class="d-flex justify-content-between align-items-end pb-4 mb-5 border-bottom border-secondary-subtle flex-wrap gap-3">
             <div>
-              <div class="catalog-search-wrap mb-3">
-                <span class="material-symbols-outlined">search</span>
-                <input type="text" value="Vinos" placeholder="Buscar..." />
+              <div class="d-flex align-items-center gap-2 border-bottom border-dark pb-2 mb-3" style="max-width:320px;">
+                <span class="material-symbols-outlined text-secondary fs-6">search</span>
+                <input type="text" value="Vinos" placeholder="Buscar..." class="bg-transparent border-0 outline-none flex-grow-1 text-dark" style="font-size:14px;" />
               </div>
-              <h1 class="font-headline-sm mb-1" style="font-size:22px;">Resultados para "Vinos"</h1>
-              <p class="font-label-caps" style="font-size:10px;color:var(--vino-muted);margin:0;">42 PRODUCTOS
-                ENCONTRADOS</p>
+              <h1 class="fs-4 mb-1 fw-bold" style="font-family:var(--font-display);">Resultados para "Vinos"</h1>
+              <p class="text-uppercase fw-semibold text-muted m-0" style="font-size:10px; letter-spacing:0.13em;">42 PRODUCTOS ENCONTRADOS</p>
             </div>
-            <div class="sort-select-wrap">
-              <select class="sort-select">
+            <div class="position-relative d-flex align-items-center">
+              <select class="form-select border-0 bg-transparent text-uppercase fw-bold text-dark pe-4 shadow-none" style="font-size:10px; letter-spacing:0.12em; cursor:pointer;">
                 <option>ORDENAR POR: RELEVANCIA</option>
                 <option>PRECIO: MENOR A MAYOR</option>
                 <option>PRECIO: MAYOR A MENOR</option>
                 <option>MÁS NUEVOS</option>
               </select>
-              <span class="material-symbols-outlined">expand_more</span>
             </div>
           </div>
 
@@ -147,24 +135,20 @@
 
             <div class="col-12 col-sm-6 col-xl-4">
               <a href="ProducDetailPage.html" class="vino-card-link">
-                <div class="vino-card h-100">
-                  <div class="vino-card-img">
-                    <img src="img/Marques_de_Caceres_Crianza_Rioja-removebg-preview.avif"
-                      alt="Marqués de Cáceres Crianza Rioja" />
-                    <span class="vino-card-badge offer">EN OFERTA</span>
+                <div class="vino-card h-100 d-flex flex-column">
+                  <div class="vino-card-img" style="padding:24px;">
+                    <img src="img/Marques_de_Caceres_Crianza_Rioja-removebg-preview.avif" alt="Marqués de Cáceres Crianza Rioja" />
+                    <span class="vino-card-badge bg-dark">EN OFERTA</span>
                   </div>
-                  <div class="vino-card-body">
+                  <div class="d-flex flex-column flex-grow-1" style="padding:20px;">
                     <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h3 class="font-headline-xs card-title" style="font-size:16px;margin:0;">Marqués de Cáceres Crianza
-                        Rioja</h3>
-                      <span class="vino-card-vol font-label-caps"
-                        style="font-size:9px;border:1px solid var(--vino-border);padding:2px 5px;white-space:nowrap;margin-left:8px;color:var(--vino-muted);">750ML</span>
+                      <h3 class="text-dark" style="font-size:16px; margin:0; transition:color 0.2s;">Marqués de Cáceres Crianza Rioja</h3>
+                      <span class="text-uppercase fw-semibold border border-secondary-subtle text-muted px-1 ms-2" style="font-size:9px;">750ML</span>
                     </div>
-                    <p class="card-sub font-body-sm" style="font-size:13px;">Rioja, España • Tempranillo</p>
-                    <div class="vino-card-footer">
-                      <span class="font-price" style="font-size:18px;">₡18.500</span>
-                      <button class="btn-vino-primary" style="padding:10px 20px;font-size:11px;"
-                        data-add-cart onclick="event.stopPropagation();">AGREGAR</button>
+                    <p class="text-secondary" style="font-size:13px; margin-bottom:0;">Rioja, España • Tempranillo</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto" style="padding-top:16px;">
+                      <span class="text-dark" style="font-size:18px; font-weight:600;">₡18.500</span>
+                      <button class="btn-vino btn-vino-primary px-3 py-2 border-0" data-add-cart onclick="event.stopPropagation();" style="font-size:11px; letter-spacing:0.13em;">AGREGAR</button>
                     </div>
                   </div>
                 </div>
@@ -173,23 +157,19 @@
 
             <div class="col-12 col-sm-6 col-xl-4">
               <a href="ProducDetailPage.html" class="vino-card-link">
-                <div class="vino-card h-100">
-                  <div class="vino-card-img">
-                    <img src="img/Catena_Zapata_Adrianna_Vineyard_Malbec-removebg-preview.avif"
-                      alt="Catena Zapata Adrianna Vineyard Malbec" />
+                <div class="vino-card h-100 d-flex flex-column">
+                  <div class="vino-card-img" style="padding:24px;">
+                    <img src="img/Catena_Zapata_Adrianna_Vineyard_Malbec-removebg-preview.avif" alt="Catena Zapata Adrianna Vineyard Malbec" />
                   </div>
-                  <div class="vino-card-body">
+                  <div class="d-flex flex-column flex-grow-1" style="padding:20px;">
                     <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h3 class="font-headline-xs card-title" style="font-size:16px;margin:0;">Catena Zapata Adrianna
-                        Vineyard Malbec</h3>
-                      <span class="font-label-caps"
-                        style="font-size:9px;border:1px solid var(--vino-border);padding:2px 5px;white-space:nowrap;margin-left:8px;color:var(--vino-muted);">750ML</span>
+                      <h3 class="text-dark" style="font-size:16px; margin:0; transition:color 0.2s;">Catena Zapata Adrianna Vineyard Malbec</h3>
+                      <span class="text-uppercase fw-semibold border border-secondary-subtle text-muted px-1 ms-2" style="font-size:9px;">750ML</span>
                     </div>
-                    <p class="card-sub font-body-sm" style="font-size:13px;">Mendoza, Argentina • Malbec</p>
-                    <div class="vino-card-footer">
-                      <span class="font-price" style="font-size:18px;">₡24.900</span>
-                      <button class="btn-vino-primary" style="padding:10px 20px;font-size:11px;"
-                        data-add-cart onclick="event.stopPropagation();">AGREGAR</button>
+                    <p class="text-secondary" style="font-size:13px; margin-bottom:0;">Mendoza, Argentina • Malbec</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto" style="padding-top:16px;">
+                      <span class="text-dark" style="font-size:18px; font-weight:600;">₡24.900</span>
+                      <button class="btn-vino btn-vino-primary px-3 py-2 border-0" data-add-cart onclick="event.stopPropagation();" style="font-size:11px; letter-spacing:0.13em;">AGREGAR</button>
                     </div>
                   </div>
                 </div>
@@ -198,23 +178,19 @@
 
             <div class="col-12 col-sm-6 col-xl-4">
               <a href="ProducDetailPage.html" class="vino-card-link">
-                <div class="vino-card h-100">
-                  <div class="vino-card-img">
-                    <img src="img/Concha_y_Toro_Don_Melchor_Cabernet_Sauvignon-removebg-preview.avif"
-                      alt="Concha y Toro Don Melchor Cabernet Sauvignon" />
+                <div class="vino-card h-100 d-flex flex-column">
+                  <div class="vino-card-img" style="padding:24px;">
+                    <img src="img/Concha_y_Toro_Don_Melchor_Cabernet_Sauvignon-removebg-preview.avif" alt="Concha y Toro Don Melchor Cabernet Sauvignon" />
                   </div>
-                  <div class="vino-card-body">
+                  <div class="d-flex flex-column flex-grow-1" style="padding:20px;">
                     <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h3 class="font-headline-xs card-title" style="font-size:16px;margin:0;">Concha y Toro Don Melchor
-                        Cabernet Sauvignon</h3>
-                      <span class="font-label-caps"
-                        style="font-size:9px;border:1px solid var(--vino-border);padding:2px 5px;white-space:nowrap;margin-left:8px;color:var(--vino-muted);">750ML</span>
+                      <h3 class="text-dark" style="font-size:16px; margin:0; transition:color 0.2s;">Concha y Toro Don Melchor Cabernet Sauvignon</h3>
+                      <span class="text-uppercase fw-semibold border border-secondary-subtle text-muted px-1 ms-2" style="font-size:9px;">750ML</span>
                     </div>
-                    <p class="card-sub font-body-sm" style="font-size:13px;">Puente Alto, Chile • Cabernet</p>
-                    <div class="vino-card-footer">
-                      <span class="font-price" style="font-size:18px;">₡72.000</span>
-                      <button class="btn-vino-primary" style="padding:10px 20px;font-size:11px;"
-                        data-add-cart onclick="event.stopPropagation();">AGREGAR</button>
+                    <p class="text-secondary" style="font-size:13px; margin-bottom:0;">Puente Alto, Chile • Cabernet</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto" style="padding-top:16px;">
+                      <span class="text-dark" style="font-size:18px; font-weight:600;">₡72.000</span>
+                      <button class="btn-vino btn-vino-primary px-3 py-2 border-0" data-add-cart onclick="event.stopPropagation();" style="font-size:11px; letter-spacing:0.13em;">AGREGAR</button>
                     </div>
                   </div>
                 </div>
@@ -223,22 +199,19 @@
 
             <div class="col-12 col-sm-6 col-xl-4">
               <a href="ProducDetailPage.html" class="vino-card-link">
-                <div class="vino-card h-100">
-                  <div class="vino-card-img">
+                <div class="vino-card h-100 d-flex flex-column">
+                  <div class="vino-card-img" style="padding:24px;">
                     <img src="img/Chateau_Mouton_Rothschild-removebg-preview.avif" alt="Château Mouton Rothschild" />
                   </div>
-                  <div class="vino-card-body">
+                  <div class="d-flex flex-column flex-grow-1" style="padding:20px;">
                     <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h3 class="font-headline-xs card-title" style="font-size:16px;margin:0;">Château Mouton Rothschild
-                      </h3>
-                      <span class="font-label-caps"
-                        style="font-size:9px;border:1px solid var(--vino-border);padding:2px 5px;white-space:nowrap;margin-left:8px;color:var(--vino-muted);">750ML</span>
+                      <h3 class="text-dark" style="font-size:16px; margin:0; transition:color 0.2s;">Château Mouton Rothschild</h3>
+                      <span class="text-uppercase fw-semibold border border-secondary-subtle text-muted px-1 ms-2" style="font-size:9px;">750ML</span>
                     </div>
-                    <p class="card-sub font-body-sm" style="font-size:13px;">Bordeaux, Francia • Blend</p>
-                    <div class="vino-card-footer">
-                      <span class="font-price" style="font-size:18px;">₡88.500</span>
-                      <button class="btn-vino-primary" style="padding:10px 20px;font-size:11px;"
-                        data-add-cart onclick="event.stopPropagation();">AGREGAR</button>
+                    <p class="text-secondary" style="font-size:13px; margin-bottom:0;">Bordeaux, Francia • Blend</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto" style="padding-top:16px;">
+                      <span class="text-dark" style="font-size:18px; font-weight:600;">₡88.500</span>
+                      <button class="btn-vino btn-vino-primary px-3 py-2 border-0" data-add-cart onclick="event.stopPropagation();" style="font-size:11px; letter-spacing:0.13em;">AGREGAR</button>
                     </div>
                   </div>
                 </div>
@@ -247,23 +220,19 @@
 
             <div class="col-12 col-sm-6 col-xl-4">
               <a href="ProducDetailPage.html" class="vino-card-link">
-                <div class="vino-card h-100">
-                  <div class="vino-card-img">
-                    <img src="img/Torres_Mas_La_Plana_Cabernet_Sauvignon-removebg-preview.avif"
-                      alt="Torres Mas La Plana Cabernet Sauvignon" />
+                <div class="vino-card h-100 d-flex flex-column">
+                  <div class="vino-card-img" style="padding:24px;">
+                    <img src="img/Torres_Mas_La_Plana_Cabernet_Sauvignon-removebg-preview.avif" alt="Torres Mas La Plana Cabernet Sauvignon" />
                   </div>
-                  <div class="vino-card-body">
+                  <div class="d-flex flex-column flex-grow-1" style="padding:20px;">
                     <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h3 class="font-headline-xs card-title" style="font-size:16px;margin:0;">Torres Mas La Plana
-                        Cabernet Sauvignon</h3>
-                      <span class="font-label-caps"
-                        style="font-size:9px;border:1px solid var(--vino-border);padding:2px 5px;white-space:nowrap;margin-left:8px;color:var(--vino-muted);">750ML</span>
+                      <h3 class="text-dark" style="font-size:16px; margin:0; transition:color 0.2s;">Torres Mas La Plana Cabernet Sauvignon</h3>
+                      <span class="text-uppercase fw-semibold border border-secondary-subtle text-muted px-1 ms-2" style="font-size:9px;">750ML</span>
                     </div>
-                    <p class="card-sub font-body-sm" style="font-size:13px;">Rioja, España • Tempranillo</p>
-                    <div class="vino-card-footer">
-                      <span class="font-price" style="font-size:18px;">₡54.200</span>
-                      <button class="btn-vino-primary" style="padding:10px 20px;font-size:11px;"
-                        data-add-cart onclick="event.stopPropagation();">AGREGAR</button>
+                    <p class="text-secondary" style="font-size:13px; margin-bottom:0;">Rioja, España • Tempranillo</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto" style="padding-top:16px;">
+                      <span class="text-dark" style="font-size:18px; font-weight:600;">₡54.200</span>
+                      <button class="btn-vino btn-vino-primary px-3 py-2 border-0" data-add-cart onclick="event.stopPropagation();" style="font-size:11px; letter-spacing:0.13em;">AGREGAR</button>
                     </div>
                   </div>
                 </div>
@@ -272,23 +241,20 @@
 
             <div class="col-12 col-sm-6 col-xl-4">
               <a href="ProducDetailPage.html" class="vino-card-link">
-                <div class="vino-card h-100">
-                  <div class="vino-card-img">
-                    <img src="img/Montes_Alpha_Cabernet_Sauvignon-removebg-preview.avif"
-                      alt="Montes Alpha Cabernet Sauvignon" style="opacity:.7;" />
-                    <span class="vino-card-badge sold-out">AGOTADO</span>
+                <div class="vino-card h-100 d-flex flex-column">
+                  <div class="vino-card-img position-relative" style="padding:24px;">
+                    <img src="img/Montes_Alpha_Cabernet_Sauvignon-removebg-preview.avif" alt="Montes Alpha Cabernet Sauvignon" style="opacity:.7;" />
+                    <span class="vino-card-badge bg-burgundy-light">AGOTADO</span>
                   </div>
-                  <div class="vino-card-body" style="opacity:.75;">
+                  <div class="d-flex flex-column flex-grow-1" style="opacity:.75; padding:20px;">
                     <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h3 class="font-headline-xs card-title" style="font-size:16px;margin:0;">Montes Alpha Cabernet
-                        Sauvignon</h3>
-                      <span class="font-label-caps"
-                        style="font-size:9px;border:1px solid var(--vino-border);padding:2px 5px;white-space:nowrap;margin-left:8px;color:var(--vino-muted);">750ML</span>
+                      <h3 class="text-dark" style="font-size:16px; margin:0; transition:color 0.2s;">Montes Alpha Cabernet Sauvignon</h3>
+                      <span class="text-uppercase fw-semibold border border-secondary-subtle text-muted px-1 ms-2" style="font-size:9px;">750ML</span>
                     </div>
-                    <p class="card-sub font-body-sm" style="font-size:13px;">Valle de Colchagua, Chile • Merlot</p>
-                    <div class="vino-card-footer">
-                      <span class="font-price" style="font-size:18px;">₡21.800</span>
-                      <button class="btn-disabled" disabled onclick="event.stopPropagation();">AGOTADO</button>
+                    <p class="text-secondary" style="font-size:13px; margin-bottom:0;">Valle de Colchagua, Chile • Merlot</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto" style="padding-top:16px;">
+                      <span class="text-dark" style="font-size:18px; font-weight:600;">₡21.800</span>
+                      <button class="btn btn-light bg-secondary-subtle text-secondary px-3 py-2 text-uppercase fw-bold border-0" style="font-size:11px; letter-spacing:0.13em; cursor:not-allowed;" disabled onclick="event.stopPropagation();">AGOTADO</button>
                     </div>
                   </div>
                 </div>
@@ -297,17 +263,17 @@
 
           </div>
 
-          <nav class="vino-pagination">
-            <button class="vino-page-btn disabled" disabled aria-label="Anterior">
-              <span class="material-symbols-outlined">chevron_left</span>
+          <nav class="d-flex justify-content-center align-items-center mt-5" style="gap:4px;">
+            <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center border-secondary-subtle rounded-0" style="width:44px; height:44px;" disabled aria-label="Anterior">
+              <span class="material-symbols-outlined fs-5">chevron_left</span>
             </button>
-            <button class="vino-page-btn active">1</button>
-            <button class="vino-page-btn">2</button>
-            <button class="vino-page-btn">3</button>
-            <span class="vino-page-dots">...</span>
-            <button class="vino-page-btn">14</button>
-            <button class="vino-page-btn" aria-label="Siguiente">
-              <span class="material-symbols-outlined">chevron_right</span>
+            <button class="btn btn-dark d-flex align-items-center justify-content-center rounded-0" style="width:44px; height:44px; font-size:12px; font-weight:600;">1</button>
+            <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center border-secondary-subtle rounded-0 text-dark" style="width:44px; height:44px; font-size:12px; font-weight:600;">2</button>
+            <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center border-secondary-subtle rounded-0 text-dark" style="width:44px; height:44px; font-size:12px; font-weight:600;">3</button>
+            <span class="text-secondary px-2 fs-6">...</span>
+            <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center border-secondary-subtle rounded-0 text-dark" style="width:44px; height:44px; font-size:12px; font-weight:600;">14</button>
+            <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center border-secondary-subtle rounded-0 text-dark" style="width:44px; height:44px;" aria-label="Siguiente">
+              <span class="material-symbols-outlined fs-5">chevron_right</span>
             </button>
           </nav>
 
@@ -319,39 +285,37 @@
   <footer class="vino-footer">
     <div class="row g-4" style="max-width:1280px;margin:0 auto;">
       <div class="col-12 col-md-4">
-        <span class="vino-footer-brand d-block mb-3">VINOLILLO</span>
-        <p>Especialistas en la curaduría de vinos finos y experiencias sensoriales de alta gama.</p>
+        <span class="font-display fw-bold d-block mb-3 fs-5">VINOLILLO</span>
+        <p class="text-secondary" style="font-size:13px; line-height:1.7;">Especialistas en la curaduría de vinos finos y experiencias sensoriales de alta gama.</p>
       </div>
       <div class="col-6 col-md-2">
-        <span class="vino-footer-title">PRODUCTOS</span>
-        <a href="#">Vinos Tintos</a>
-        <a href="#">Blancos Premium</a>
-        <a href="#">Espumantes</a>
-        <a href="#">Destilados</a>
+        <span class="text-uppercase fw-bold d-block mb-3" style="font-size:10px; letter-spacing:0.18em;">PRODUCTOS</span>
+        <a href="#" class="d-block mb-2" style="font-size:13px;">Vinos Tintos</a>
+        <a href="#" class="d-block mb-2" style="font-size:13px;">Blancos Premium</a>
+        <a href="#" class="d-block mb-2" style="font-size:13px;">Espumantes</a>
+        <a href="#" class="d-block mb-2" style="font-size:13px;">Destilados</a>
       </div>
       <div class="col-6 col-md-3">
-        <span class="vino-footer-title">TIENDA</span>
-        <a href="#">Ubicación</a>
-        <a href="#">Información de la Tienda</a>
-        <a href="#">Política de Envíos</a>
-        <a href="#">Contacto</a>
+        <span class="text-uppercase fw-bold d-block mb-3" style="font-size:10px; letter-spacing:0.18em;">TIENDA</span>
+        <a href="#" class="d-block mb-2" style="font-size:13px;">Ubicación</a>
+        <a href="#" class="d-block mb-2" style="font-size:13px;">Información de la Tienda</a>
+        <a href="#" class="d-block mb-2" style="font-size:13px;">Política de Envíos</a>
+        <a href="#" class="d-block mb-2" style="font-size:13px;">Contacto</a>
       </div>
       <div class="col-6 col-md-2">
-        <span class="vino-footer-title">LEGAL</span>
-        <p class="font-label-caps" style="font-size:10px;">© 2026 VINOLILLO. Solo para mayores de 18 años.</p>
-        <p class="vino-footer-dev mt-4">Desarrollado por Daniel González &amp; Josué Solórzano</p>
+        <span class="text-uppercase fw-bold d-block mb-3" style="font-size:10px; letter-spacing:0.18em;">LEGAL</span>
+        <p class="text-uppercase fw-semibold text-secondary mb-0" style="font-size:10px; letter-spacing:0.13em;">© 2026 VINOLILLO. Solo para mayores de 18 años.</p>
+        <p class="text-secondary mt-4 mb-0 opacity-75" style="font-size:13px; letter-spacing:0.5px;">Desarrollado por Daniel González &amp; Josué Solórzano</p>
         <div class="d-flex gap-3 mt-3">
-          <a href="VinolilloHomePage.html" style="color:var(--vino-secondary);"><span
-              class="material-symbols-outlined">share</span></a>
-          <a href="VinolilloHomePage.html" style="color:var(--vino-secondary);"><span
-              class="material-symbols-outlined">public</span></a>
+          <a href="#" style="color:var(--vino-secondary);"><span class="material-symbols-outlined">share</span></a>
+          <a href="#" style="color:var(--vino-secondary);"><span class="material-symbols-outlined">public</span></a>
         </div>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/vinolillo.js"></script>
+  <script src="js/vinolillo.js"></script>
 </body>
 
 </html>
